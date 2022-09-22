@@ -9,9 +9,9 @@ $sql = "SELECT * FROM login WHERE nombres = '$nombre' and apellidos = '$apellido
 $resultado = mysqli_query($xcon, $sql);
 $filas = mysqli_num_rows($resultado);
 if ($filas) {
-    header("location:index.php");
+    header("location:index.html");
 }else{
-    echo "ERROR hijos de las tresmil putas";
+    echo "ERROR tonto";
 }
 mysqli_free_result($resultado);
 mysqli_close($xcon);
