@@ -11595,7 +11595,7 @@ footer.footer .social-link:hover {
 
 .login-dark {
   height: 658px;
-  background:#475d62  url(/Fondos/fondito3.2.jpg);
+  background:#475d62  url(/Fondos/fondito3.jpg);
   background-size:cover;
   position:relative;
 }
@@ -11612,7 +11612,7 @@ footer.footer .social-link:hover {
   top:50%;
   left:50%;
   color:#fff;
-  box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+  box-shadow:0px 0px 1rem rgba(0,0,0);
 }
 
 .login-dark .illustration {
@@ -11667,11 +11667,7 @@ footer.footer .social-link:hover {
 }
 
 .form-control::placeholder{
-  opacity: 0.6;
-  text-decoration:none;
-  color: white;
-  text-shadow: 1px 2px black;
-  text-align: justify;
+  text-shadow: 1px 1px white;
 }
 
 
@@ -11699,11 +11695,6 @@ footer.footer .social-link:hover {
   font-size: 30px;
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-
-.tuki{
-  background:goldenrod
 }
 
 input::-webkit-outer-spin-button,
