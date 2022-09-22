@@ -1,3 +1,10 @@
+<?php
+    session_start();
+	if (!isset($_SESSION['nombre'])) {
+		header('Location: login.html');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +18,6 @@
 </head>
 <a id="scroll"><span></span></a>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-
     <!-- page Navigation -->
     <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
         <div class="container">
@@ -32,12 +38,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#mapa">Mapa</a>
                     </li>
-                    <li class="nav-item">
+                    <?php
+                        if (!isset($_SESSION['nombre'])) {
+                            echo "<li class='nav-item'>
+                                    <a href='login.html' class='ml-4 nav-link btn btn-primary btn-sm rounded'>Iniciar Sesión</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a href='register.html' class='ml-4 nav-link btn btn-primary btn-sm rounded'>Registrarse</a>
+                                </li>";
+                        } else {
+                            echo "<li class='nav-item'>
+                                    <a href='cerrar.php' class='ml-4 nav-link btn btn-primary btn-sm rounded'>Cerrar Sesión</a>
+                                </li>";
+                        }
+                    ?>
+
+                    <!-- <li class="nav-item">
                         <a href="login.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Iniciar Sesión</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a href="register.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Registrarse</a>
-                    </li>
+                    </li> -->
                     <!-- <li>
                         <div class="container">
                             <input class="container_toggle" type="checkbox" id="switch" name="mode">
@@ -53,8 +74,14 @@
     <!-- Page Header -->
     <header class="header">
         <div class="overlay">
-            <h1 class="subtitle"></h1>
-            <h1 class="title">Academy Dates</h1>  
+            <h1 class="title">Academy Dates</h1>
+            <?php
+                if(isset($_SESSION['nombre'])) {
+                    echo "<h1 class='subtitle'>
+                            ¡Bienvenido, " . $_SESSION['nombre'] . "!
+                        </h1>";
+                }
+            ?>  
         </div>  
         <div class="shape">
             <svg viewBox="0 0 1500 200">
@@ -151,7 +178,7 @@
                                 <img class="mr-3" src="cosas/yo.jpg" alt="">
                                 <div class="media-body">
                                     <h6 class="mt-1 mb-0">Juan Camilo Herrera Chamat</h6>
-                                    <small class="text-muted mb-0">Front End</small>      
+                                    <small class="text-muted mb-0">Front End - Líder</small>      
                                 </div>
                             </div>
                             <!-- <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim modi, id dicta reiciendis itaque.</p> -->

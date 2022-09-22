@@ -1,20 +1,19 @@
-<?php
-$nombre = $_POST["nombre"];
-$apellido = $_POST["apellido"];
-$id = $_POST["idestudiante"];
-session_start();
-$_SESSION['nombre'] = $nombre;
-require './conn.php';
-$sql = "SELECT * FROM login WHERE nombres = '$nombre' and apellidos = '$apellido' and idestudiantes = $id";
-$resultado = mysqli_query($xcon, $sql);
-$filas = mysqli_num_rows($resultado);
+<?php 
+	session_start();
+	include_once './conn.php';
+	$nombre = $_POST['nombre'];
+	$apellido = $_POST['apellido'];
+	$idE = $_POST['idestudiante'];
+	$sentencia = $bd->prepare('select * from estudiantes where 
+								nombres = ? and apellidos = ? and idestudiantes = ?;');
+	$sentencia->execute([$nombre, $apellido, $idE]);
+	$datos = $sentencia->fetch(PDO::FETCH_OBJ);
+	//print_r($datos);
 
-if ($filas) {
-    header("location:index.html");
-}else{
-    echo "ERROR tonto";
-}
-mysqli_free_result($resultado);
-mysqli_close($xcon);
+	if ($datos === FALSE) {
+		header('Location: login.html');
+	}elseif($sentencia->rowCount() == 1){
+		$_SESSION['nombre'] = $datos->nombres;
+		header('Location: index.php');
+	}
 ?>
-

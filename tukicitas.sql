@@ -21,582 +21,37 @@ SET time_zone = "+00:00";
 -- Base de datos: `tukicitas`
 --
 
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `citacionestudiante`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `citacionestudiante` (
-`apellidos` varchar(45)
-,`nombres` varchar(20)
-,`idestudiantes` int(11)
-,`lugar` varchar(20)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `citas`
---
-
-CREATE TABLE `citas` (
-  `idCitas` int(11) NOT NULL,
-  `idProfesor` int(11) NOT NULL,
-  `idEstudiante` int(15) NOT NULL,
-  `fechahoraCita` datetime NOT NULL,
-  `lugar` varchar(20) NOT NULL,
-  `asignatura` varchar(20) NOT NULL,
-  `motivo` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `citas`
---
-
-INSERT INTO `citas` (`idCitas`, `idProfesor`, `idEstudiante`, `fechahoraCita`, `lugar`, `asignatura`, `motivo`) VALUES
-(2, 100001, 10001, '2022-08-25 09:13:00', 'Unidad', 'Fisica', 'Otros'),
-(3, 100002, 10002, '2022-04-13 13:23:00', 'Salon', 'Tecnologia', 'Academicos'),
-(4, 100003, 10003, '2022-08-01 07:08:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
-(5, 100004, 10004, '2022-01-06 09:55:00', 'Unidad', 'Artes', 'Otros'),
-(6, 100005, 10005, '2022-08-07 16:43:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
-(7, 100006, 10006, '2022-04-15 09:58:00', 'Salon', 'Quimica', 'Academicos'),
-(8, 100007, 10007, '2022-04-25 09:07:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(9, 100008, 10008, '2022-01-16 15:20:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(10, 100009, 10009, '2022-02-14 16:44:00', 'Salon', 'Tecnologia', 'Academicos'),
-(11, 100010, 10010, '2022-04-08 10:38:00', 'Rectoria', 'Artes', 'Academicos'),
-(12, 100011, 10011, '2022-05-13 08:15:00', 'Salon', 'Fisica', 'Otros'),
-(13, 100012, 10012, '2022-05-21 16:22:00', 'Salon', 'Tecnologia', 'Academicos'),
-(14, 100013, 10013, '2022-01-09 07:20:00', 'Sala de Profesores', 'Politica', 'Otros'),
-(15, 100014, 10014, '2022-02-20 13:40:00', 'Salon', 'Ingles', 'Otros'),
-(16, 100015, 10015, '2022-07-08 14:00:00', 'Salon', 'Edu.Fisica', 'Otros'),
-(17, 100016, 10016, '2022-01-22 15:20:00', 'Salon', 'Español', 'Academicos'),
-(18, 100017, 10017, '2022-06-27 13:42:00', 'Salon', 'Artes', 'Otros'),
-(19, 100018, 10018, '2022-08-14 07:45:00', 'Salon', 'Matematicas', 'Otros'),
-(20, 100019, 10019, '2022-08-17 09:26:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(21, 100020, 10020, '2022-08-03 13:53:00', 'Salon', 'Edu.Fisica', 'Otros'),
-(22, 100021, 10021, '2022-07-08 11:15:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
-(23, 100022, 10022, '2022-03-18 07:54:00', 'Salon', 'Sociales', 'Academicos'),
-(24, 100023, 10023, '2022-02-09 16:25:00', 'Rectoria', 'Sociales', 'Academicos'),
-(25, 100024, 10024, '2022-02-21 15:41:00', 'Rectoria', 'Politica', 'Otros'),
-(26, 100025, 10025, '2022-04-16 13:36:00', 'Salon', 'Politica', 'Academicos'),
-(27, 100026, 10026, '2022-06-18 12:13:00', 'Salon', 'Filosofia', 'Otros'),
-(28, 100027, 10027, '2022-04-06 10:51:00', 'Salon', 'Quimica', 'Academicos'),
-(29, 100028, 10028, '2022-07-24 12:28:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
-(30, 100029, 10029, '2022-02-08 16:45:00', 'Salon', 'Ingles', 'Otros'),
-(31, 100030, 10030, '2022-07-30 13:55:00', 'Sala de Profesores', 'Español', 'Otros'),
-(32, 100031, 10031, '2022-04-26 10:43:00', 'Unidad', 'Filosofia', 'Otros'),
-(33, 100032, 10032, '2022-02-15 07:51:00', 'Salon', 'Matematicas', 'Otros'),
-(34, 100033, 10033, '2022-08-22 12:17:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(35, 100034, 10034, '2022-02-03 07:46:00', 'Unidad', 'Tecnologia', 'Academicos'),
-(36, 100035, 10035, '2022-01-12 07:53:00', 'Salon', 'Sociales', 'Otros'),
-(37, 100036, 10036, '2022-07-03 09:11:00', 'Unidad', 'Fisica', 'Otros'),
-(38, 100037, 10037, '2022-01-19 09:26:00', 'Salon', 'Quimica', 'Academicos'),
-(39, 100038, 10038, '2022-07-29 08:38:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(40, 100039, 10039, '2022-03-31 13:58:00', 'Salon', 'Artes', 'Otros'),
-(41, 100040, 10040, '2022-07-11 14:06:00', 'Rectoria', 'Fisica', 'Otros'),
-(42, 100041, 10041, '2022-03-24 12:07:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
-(43, 100042, 10042, '2022-03-13 16:32:00', 'Salon', 'Politica', 'Otros'),
-(44, 100043, 10043, '2022-07-22 10:28:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
-(45, 100044, 10044, '2022-05-27 10:29:00', 'Unidad', 'Matematicas', 'Academicos'),
-(46, 100045, 10045, '2022-06-29 07:48:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(47, 100046, 10046, '2022-02-20 13:36:00', 'Unidad', 'Filosofia', 'Otros'),
-(48, 100047, 10047, '2022-03-30 07:55:00', 'Rectoria', 'Fisica', 'Otros'),
-(49, 100048, 10048, '2022-03-28 13:55:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
-(50, 100049, 10049, '2022-03-08 09:37:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(51, 100050, 10050, '2022-07-19 11:39:00', 'Rectoria', 'Politica', 'Otros'),
-(52, 100051, 10051, '2022-01-01 13:42:00', 'Rectoria', 'Filosofia', 'Academicos'),
-(53, 100052, 10052, '2022-06-12 09:16:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(54, 100053, 10053, '2022-03-16 08:43:00', 'Salon', 'Fisica', 'Otros'),
-(55, 100054, 10054, '2022-06-11 13:53:00', 'Salon', 'Filosofia', 'Otros'),
-(56, 100055, 10055, '2022-02-21 09:48:00', 'Salon', 'Filosofia', 'Otros'),
-(57, 100056, 10056, '2022-08-14 10:40:00', 'Salon', 'Artes', 'Academicos'),
-(58, 100057, 10057, '2022-07-01 10:41:00', 'Salon', 'Quimica', 'Academicos'),
-(59, 100058, 10058, '2022-08-23 08:58:00', 'Unidad', 'Tecnologia', 'Otros'),
-(60, 100059, 10059, '2022-05-16 14:53:00', 'Salon', 'Filosofia', 'Otros'),
-(61, 100060, 10060, '2022-03-09 07:45:00', 'Rectoria', 'Matematicas', 'Academicos'),
-(62, 100061, 10061, '2022-07-27 15:10:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(63, 100062, 10062, '2022-07-27 11:01:00', 'Unidad', 'Artes', 'Academicos'),
-(64, 100063, 10063, '2022-06-05 08:53:00', 'Unidad', 'Sociales', 'Academicos'),
-(65, 100064, 10064, '2022-05-16 16:23:00', 'Rectoria', 'Fisica', 'Otros'),
-(66, 100065, 10065, '2022-03-06 15:50:00', 'Unidad', 'Tecnologia', 'Academicos'),
-(67, 100066, 10066, '2022-08-14 15:11:00', 'Unidad', 'Quimica', 'Academicos'),
-(68, 100067, 10067, '2022-03-05 11:27:00', 'Salon', 'Quimica', 'Academicos'),
-(69, 100068, 10068, '2022-03-25 16:04:00', 'Unidad', 'Filosofia', 'Academicos'),
-(70, 100069, 10069, '2022-02-23 09:40:00', 'Salon', 'Tecnologia', 'Otros'),
-(71, 100070, 10070, '2022-07-18 13:18:00', 'Sala de Profesores', 'Fisica', 'Academicos'),
-(72, 100071, 10071, '2022-06-20 13:42:00', 'Sala de Profesores', 'Ingles', 'Otros'),
-(73, 100072, 10072, '2022-06-30 10:35:00', 'Rectoria', 'Sociales', 'Otros'),
-(74, 100073, 10073, '2022-02-13 08:50:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(75, 100074, 10074, '2022-07-01 10:07:00', 'Rectoria', 'Filosofia', 'Academicos'),
-(76, 100075, 10075, '2022-06-17 07:00:00', 'Salon', 'Tecnologia', 'Otros'),
-(77, 100076, 10076, '2022-06-17 07:04:00', 'Unidad', 'Filosofia', 'Academicos'),
-(78, 100077, 10077, '2022-07-04 07:06:00', 'Rectoria', 'Quimica', 'Academicos'),
-(79, 100078, 10078, '2022-01-23 16:15:00', 'Unidad', 'Filosofia', 'Academicos'),
-(80, 100079, 10079, '2022-01-20 15:05:00', 'Unidad', 'Fisica', 'Otros'),
-(81, 100080, 10080, '2022-07-10 14:45:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
-(82, 100081, 10081, '2022-04-07 08:59:00', 'Sala de Profesores', 'Politica', 'Otros'),
-(83, 100082, 10082, '2022-04-23 12:54:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
-(84, 100083, 10083, '2022-07-06 14:18:00', 'Unidad', 'Sociales', 'Otros'),
-(85, 100084, 10084, '2022-02-22 10:08:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
-(86, 100085, 10085, '2022-02-23 13:08:00', 'Unidad', 'Quimica', 'Academicos'),
-(87, 100086, 10086, '2022-06-09 11:19:00', 'Sala de Profesores', 'Español', 'Otros'),
-(88, 100087, 10087, '2022-05-07 11:57:00', 'Unidad', 'Ingles', 'Otros'),
-(89, 100088, 10088, '2022-08-03 07:46:00', 'Salon', 'Fisica', 'Academicos'),
-(90, 100089, 10089, '2022-02-17 07:36:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
-(91, 100090, 10090, '2022-02-05 13:53:00', 'Unidad', 'Quimica', 'Otros'),
-(92, 100091, 10091, '2022-08-11 12:56:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
-(93, 100092, 10092, '2022-03-05 12:04:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(94, 100093, 10093, '2022-01-14 13:02:00', 'Salon', 'Ingles', 'Academicos'),
-(95, 100094, 10094, '2022-06-29 08:40:00', 'Unidad', 'Sociales', 'Otros'),
-(96, 100095, 10095, '2022-06-26 12:51:00', 'Unidad', 'Fisica', 'Otros'),
-(97, 100096, 10096, '2022-03-25 07:14:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
-(98, 100097, 10097, '2022-08-14 13:00:00', 'Unidad', 'Filosofia', 'Academicos'),
-(99, 100098, 10098, '2022-07-20 13:59:00', 'Rectoria', 'Quimica', 'Otros'),
-(100, 100099, 10099, '2022-04-11 10:41:00', 'Unidad', 'Artes', 'Academicos'),
-(101, 100100, 10100, '2022-07-12 13:14:00', 'Unidad', 'Filosofia', 'Academicos'),
-(102, 100101, 10101, '2022-04-20 12:25:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(103, 100102, 10102, '2022-07-14 08:10:00', 'Sala de Profesores', 'Español', 'Academicos'),
-(104, 100103, 10103, '2022-03-14 10:45:00', 'Unidad', 'Politica', 'Otros'),
-(105, 100104, 10104, '2022-05-08 13:09:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
-(106, 100105, 10105, '2022-03-13 11:03:00', 'Rectoria', 'Politica', 'Academicos'),
-(107, 100106, 10106, '2022-07-11 09:58:00', 'Salon', 'Edu.Fisica', 'Academicos'),
-(108, 100107, 10107, '2022-02-16 07:32:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
-(109, 100108, 10108, '2022-05-12 08:41:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(110, 100109, 10109, '2022-05-07 15:35:00', 'Rectoria', 'Matematicas', 'Academicos'),
-(111, 100110, 10110, '2022-01-19 10:54:00', 'Unidad', 'Sociales', 'Otros'),
-(112, 100111, 10111, '2022-07-31 10:54:00', 'Salon', 'Politica', 'Otros'),
-(113, 100112, 10112, '2022-04-25 10:36:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
-(114, 100113, 10113, '2022-04-22 11:22:00', 'Unidad', 'Artes', 'Academicos'),
-(115, 100114, 10114, '2022-06-17 10:58:00', 'Unidad', 'Artes', 'Academicos'),
-(116, 100115, 10115, '2022-06-04 09:29:00', 'Unidad', 'Politica', 'Otros'),
-(117, 100116, 10116, '2022-05-20 14:09:00', 'Unidad', 'Politica', 'Otros'),
-(118, 100117, 10117, '2022-03-16 10:32:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
-(119, 100118, 10118, '2022-03-07 14:37:00', 'Salon', 'Fisica', 'Otros'),
-(120, 100119, 10119, '2022-05-05 09:05:00', 'Salon', 'Artes', 'Academicos'),
-(121, 100120, 10120, '2022-02-19 09:15:00', 'Rectoria', 'Filosofia', 'Otros'),
-(122, 100121, 10121, '2022-04-07 15:34:00', 'Unidad', 'Matematicas', 'Otros'),
-(123, 100122, 10122, '2022-08-04 16:08:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(124, 100123, 10123, '2022-02-01 11:53:00', 'Unidad', 'Quimica', 'Academicos'),
-(125, 100124, 10124, '2022-08-25 10:05:00', 'Salon', 'Matematicas', 'Otros'),
-(126, 100125, 10125, '2022-04-04 08:51:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(127, 100126, 10126, '2022-02-14 13:13:00', 'Salon', 'Fisica', 'Otros'),
-(128, 100127, 10127, '2022-04-20 10:05:00', 'Rectoria', 'Ingles', 'Academicos'),
-(129, 100128, 10128, '2022-08-04 16:14:00', 'Unidad', 'Politica', 'Academicos'),
-(130, 100129, 10129, '2022-04-18 13:51:00', 'Rectoria', 'Ingles', 'Otros'),
-(131, 100130, 10130, '2022-05-12 14:29:00', 'Rectoria', 'Filosofia', 'Academicos'),
-(132, 100131, 10131, '2022-03-15 13:35:00', 'Rectoria', 'Filosofia', 'Otros'),
-(133, 100132, 10132, '2022-07-23 16:44:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
-(134, 100133, 10133, '2022-03-03 14:26:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(135, 100134, 10134, '2022-05-11 13:18:00', 'Salon', 'Tecnologia', 'Otros'),
-(136, 100135, 10135, '2022-05-06 07:51:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
-(137, 100136, 10136, '2022-07-24 13:26:00', 'Salon', 'Edu.Fisica', 'Academicos'),
-(138, 100137, 10137, '2022-03-01 10:06:00', 'Sala de Profesores', 'Quimica', 'Otros'),
-(139, 100138, 10138, '2022-02-07 11:38:00', 'Sala de Profesores', 'Fisica', 'Otros'),
-(140, 100139, 10139, '2022-01-17 08:04:00', 'Salon', 'Español', 'Otros'),
-(141, 100140, 10140, '2022-08-06 16:11:00', 'Rectoria', 'Ingles', 'Academicos'),
-(142, 100141, 10141, '2022-08-18 13:34:00', 'Salon', 'Matematicas', 'Otros'),
-(143, 100142, 10142, '2022-04-08 11:25:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
-(144, 100143, 10143, '2022-07-22 10:54:00', 'Rectoria', 'Ingles', 'Academicos'),
-(145, 100144, 10144, '2022-08-01 09:30:00', 'Rectoria', 'Filosofia', 'Academicos'),
-(146, 100145, 10145, '2022-03-07 07:15:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
-(147, 100146, 10146, '2022-03-07 11:37:00', 'Sala de Profesores', 'Quimica', 'Otros'),
-(148, 100147, 10147, '2022-07-06 10:08:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(149, 100148, 10148, '2022-02-07 16:22:00', 'Rectoria', 'Fisica', 'Otros'),
-(150, 100149, 10149, '2022-07-06 12:20:00', 'Rectoria', 'Quimica', 'Otros'),
-(151, 100150, 10150, '2022-01-13 07:34:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(152, 100151, 10151, '2022-06-11 11:54:00', 'Unidad', 'Politica', 'Otros'),
-(153, 100152, 10152, '2022-05-07 08:28:00', 'Unidad', 'Fisica', 'Otros'),
-(154, 100153, 10153, '2022-03-11 16:13:00', 'Unidad', 'Filosofia', 'Academicos'),
-(155, 100154, 10154, '2022-06-29 13:04:00', 'Unidad', 'Tecnologia', 'Otros'),
-(156, 100155, 10155, '2022-05-04 11:48:00', 'Rectoria', 'Matematicas', 'Otros'),
-(157, 100156, 10156, '2022-08-07 10:36:00', 'Salon', 'Ingles', 'Otros'),
-(158, 100157, 10157, '2022-02-26 16:51:00', 'Salon', 'Tecnologia', 'Otros'),
-(159, 100158, 10158, '2022-04-21 12:01:00', 'Unidad', 'Artes', 'Otros'),
-(160, 100159, 10159, '2022-03-19 12:20:00', 'Sala de Profesores', 'Fisica', 'Otros'),
-(161, 100160, 10160, '2022-02-27 16:53:00', 'Salon', 'Matematicas', 'Academicos'),
-(162, 100161, 10161, '2022-04-18 12:30:00', 'Salon', 'Politica', 'Otros'),
-(163, 100162, 10162, '2022-02-04 07:36:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
-(164, 100163, 10163, '2022-07-20 10:29:00', 'Rectoria', 'Fisica', 'Academicos'),
-(165, 100164, 10164, '2022-03-13 09:23:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
-(166, 100165, 10165, '2022-03-26 07:37:00', 'Salon', 'Quimica', 'Academicos'),
-(167, 100166, 10166, '2022-01-13 12:01:00', 'Rectoria', 'Sociales', 'Academicos'),
-(168, 100167, 10167, '2022-06-12 11:54:00', 'Salon', 'Español', 'Otros'),
-(169, 100168, 10168, '2022-05-31 10:49:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(170, 100169, 10169, '2022-07-12 09:32:00', 'Salon', 'Ingles', 'Academicos'),
-(171, 100170, 10170, '2022-02-14 08:08:00', 'Salon', 'Matematicas', 'Academicos'),
-(172, 100171, 10171, '2022-06-01 07:58:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
-(173, 100172, 10172, '2022-08-22 12:46:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(174, 100173, 10173, '2022-06-14 07:12:00', 'Salon', 'Fisica', 'Academicos'),
-(175, 100174, 10174, '2022-02-23 07:04:00', 'Rectoria', 'Tecnologia', 'Academicos'),
-(176, 100175, 10175, '2022-03-18 14:29:00', 'Unidad', 'Ingles', 'Otros'),
-(177, 100176, 10176, '2022-07-08 09:39:00', 'Unidad', 'Filosofia', 'Otros'),
-(178, 100177, 10177, '2022-07-11 12:39:00', 'Unidad', 'Quimica', 'Otros'),
-(179, 100178, 10178, '2022-05-24 12:39:00', 'Sala de Profesores', 'Ingles', 'Otros'),
-(180, 100179, 10179, '2022-06-04 11:15:00', 'Unidad', 'Filosofia', 'Otros'),
-(181, 100180, 10180, '2022-01-15 11:05:00', 'Unidad', 'Fisica', 'Otros'),
-(182, 100181, 10181, '2022-03-07 16:15:00', 'Salon', 'Ingles', 'Otros'),
-(183, 100182, 10182, '2022-04-21 10:52:00', 'Rectoria', 'Tecnologia', 'Academicos'),
-(184, 100183, 10183, '2022-08-19 12:28:00', 'Salon', 'Filosofia', 'Otros'),
-(185, 100184, 10184, '2022-04-14 15:37:00', 'Unidad', 'Sociales', 'Otros'),
-(186, 100185, 10185, '2022-01-12 10:37:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(187, 100186, 10186, '2022-02-07 13:03:00', 'Rectoria', 'Fisica', 'Otros'),
-(188, 100187, 10187, '2022-02-09 13:57:00', 'Unidad', 'Tecnologia', 'Otros'),
-(189, 100188, 10188, '2022-05-03 12:47:00', 'Unidad', 'Politica', 'Academicos'),
-(190, 100189, 10189, '2022-03-16 13:35:00', 'Unidad', 'Español', 'Academicos'),
-(191, 100190, 10190, '2022-04-12 15:14:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
-(192, 100191, 10191, '2022-03-31 10:29:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
-(193, 100192, 10192, '2022-08-23 13:54:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(194, 100193, 10193, '2022-02-09 15:29:00', 'Unidad', 'Matematicas', 'Academicos'),
-(195, 100194, 10194, '2022-03-30 14:20:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(196, 100195, 10195, '2022-06-19 16:57:00', 'Salon', 'Ingles', 'Otros'),
-(197, 100196, 10196, '2022-04-02 13:48:00', 'Salon', 'Artes', 'Otros'),
-(198, 100197, 10197, '2022-07-01 09:54:00', 'Unidad', 'Politica', 'Academicos'),
-(199, 100198, 10198, '2022-05-11 07:02:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
-(200, 100199, 10199, '2022-06-12 14:45:00', 'Salon', 'Matematicas', 'Academicos'),
-(201, 100200, 10200, '2022-03-15 11:12:00', 'Salon', 'Ingles', 'Academicos'),
-(202, 100201, 10201, '2022-01-04 16:26:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(203, 100202, 10202, '2022-06-03 12:21:00', 'Unidad', 'Tecnologia', 'Academicos'),
-(204, 100203, 10203, '2022-06-21 14:54:00', 'Rectoria', 'Español', 'Otros'),
-(205, 100204, 10204, '2022-06-11 07:37:00', 'Unidad', 'Filosofia', 'Otros'),
-(206, 100205, 10205, '2022-01-02 13:39:00', 'Salon', 'Sociales', 'Otros'),
-(207, 100206, 10206, '2022-07-21 10:26:00', 'Salon', 'Tecnologia', 'Academicos'),
-(208, 100207, 10207, '2022-02-04 10:54:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
-(209, 100208, 10208, '2022-04-08 16:28:00', 'Salon', 'Politica', 'Otros'),
-(210, 100209, 10209, '2022-05-31 10:40:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
-(211, 100210, 10210, '2022-03-01 13:07:00', 'Salon', 'Español', 'Otros'),
-(212, 100211, 10211, '2022-02-01 12:45:00', 'Unidad', 'Sociales', 'Otros'),
-(213, 100212, 10212, '2022-07-24 16:35:00', 'Salon', 'Sociales', 'Academicos'),
-(214, 100213, 10213, '2022-08-11 12:43:00', 'Salon', 'Fisica', 'Academicos'),
-(215, 100214, 10214, '2022-07-12 12:29:00', 'Salon', 'Tecnologia', 'Otros'),
-(216, 100215, 10215, '2022-05-17 16:52:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(217, 100216, 10216, '2022-05-02 15:19:00', 'Unidad', 'Sociales', 'Academicos'),
-(218, 100217, 10217, '2022-06-05 16:29:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(219, 100218, 10218, '2022-02-11 09:51:00', 'Rectoria', 'Fisica', 'Otros'),
-(220, 100219, 10219, '2022-03-11 13:04:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(221, 100220, 10220, '2022-03-31 12:46:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(222, 100221, 10221, '2022-07-07 13:38:00', 'Unidad', 'Sociales', 'Otros'),
-(223, 100222, 10222, '2022-08-16 16:17:00', 'Salon', 'Fisica', 'Otros'),
-(224, 100223, 10223, '2022-04-29 09:37:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(225, 100224, 10224, '2022-02-25 16:55:00', 'Unidad', 'Ingles', 'Academicos'),
-(226, 100225, 10225, '2022-04-21 09:22:00', 'Rectoria', 'Politica', 'Otros'),
-(227, 100226, 10226, '2022-03-01 08:12:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(228, 100227, 10227, '2022-07-04 14:24:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
-(229, 100228, 10228, '2022-05-30 09:28:00', 'Salon', 'Politica', 'Otros'),
-(230, 100229, 10229, '2022-06-25 14:07:00', 'Rectoria', 'Sociales', 'Otros'),
-(231, 100230, 10230, '2022-06-18 14:53:00', 'Unidad', 'Artes', 'Academicos'),
-(232, 100231, 10231, '2022-06-28 10:42:00', 'Unidad', 'Español', 'Otros'),
-(233, 100232, 10232, '2022-06-13 16:09:00', 'Salon', 'Artes', 'Academicos'),
-(234, 100233, 10233, '2022-04-16 16:15:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
-(235, 100234, 10234, '2022-05-26 15:27:00', 'Rectoria', 'Filosofia', 'Otros'),
-(236, 100235, 10235, '2022-07-16 15:17:00', 'Rectoria', 'Ingles', 'Academicos'),
-(237, 100236, 10236, '2022-06-20 10:54:00', 'Salon', 'Politica', 'Otros'),
-(238, 100237, 10237, '2022-02-28 15:51:00', 'Salon', 'Ingles', 'Academicos'),
-(239, 100238, 10238, '2022-03-10 15:34:00', 'Salon', 'Español', 'Otros'),
-(240, 100239, 10239, '2022-06-01 15:35:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
-(241, 100240, 10240, '2022-06-03 07:11:00', 'Salon', 'Politica', 'Academicos'),
-(242, 100241, 10241, '2022-05-26 12:56:00', 'Unidad', 'Politica', 'Academicos'),
-(243, 100242, 10242, '2022-01-18 12:42:00', 'Salon', 'Tecnologia', 'Otros'),
-(244, 100243, 10243, '2022-07-17 14:15:00', 'Rectoria', 'Quimica', 'Academicos'),
-(245, 100244, 10244, '2022-06-07 11:17:00', 'Unidad', 'Quimica', 'Academicos'),
-(246, 100245, 10245, '2022-07-06 16:04:00', 'Unidad', 'Filosofia', 'Academicos'),
-(247, 100246, 10246, '2022-04-07 16:20:00', 'Unidad', 'Matematicas', 'Otros'),
-(248, 100247, 10247, '2022-03-16 10:49:00', 'Unidad', 'Español', 'Academicos'),
-(249, 100248, 10248, '2022-07-30 12:05:00', 'Salon', 'Artes', 'Otros'),
-(250, 100249, 10249, '2022-05-24 13:02:00', 'Unidad', 'Ingles', 'Otros'),
-(251, 100250, 10250, '2022-05-03 12:55:00', 'Unidad', 'Filosofia', 'Academicos'),
-(252, 100251, 10251, '2022-01-02 07:58:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(253, 100252, 10252, '2022-07-22 15:36:00', 'Rectoria', 'Artes', 'Otros'),
-(254, 100253, 10253, '2022-08-24 10:50:00', 'Rectoria', 'Fisica', 'Academicos'),
-(255, 100254, 10254, '2022-04-10 15:23:00', 'Salon', 'Filosofia', 'Academicos'),
-(256, 100255, 10255, '2022-02-25 13:01:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(257, 100256, 10256, '2022-06-05 14:45:00', 'Rectoria', 'Politica', 'Otros'),
-(258, 100257, 10257, '2022-07-18 15:21:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
-(259, 100258, 10258, '2022-03-22 10:08:00', 'Rectoria', 'Matematicas', 'Otros'),
-(260, 100259, 10259, '2022-07-15 09:37:00', 'Unidad', 'Ingles', 'Academicos'),
-(261, 100260, 10260, '2022-03-11 11:37:00', 'Rectoria', 'Matematicas', 'Otros'),
-(262, 100261, 10261, '2022-01-01 07:38:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
-(263, 100262, 10262, '2022-01-30 10:55:00', 'Sala de Profesores', 'Fisica', 'Academicos'),
-(264, 100263, 10263, '2022-08-13 14:44:00', 'Unidad', 'Español', 'Otros'),
-(265, 100264, 10264, '2022-07-12 15:53:00', 'Rectoria', 'Artes', 'Academicos'),
-(266, 100265, 10265, '2022-04-08 10:43:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(267, 100266, 10266, '2022-07-05 15:15:00', 'Sala de Profesores', 'Fisica', 'Otros'),
-(268, 100267, 10267, '2022-07-31 14:54:00', 'Sala de Profesores', 'Español', 'Otros'),
-(269, 100268, 10268, '2022-03-05 16:30:00', 'Unidad', 'Tecnologia', 'Otros'),
-(270, 100269, 10269, '2022-05-04 11:57:00', 'Rectoria', 'Artes', 'Academicos'),
-(271, 100270, 10270, '2022-01-12 15:25:00', 'Rectoria', 'Tecnologia', 'Academicos'),
-(272, 100271, 10271, '2022-02-18 16:48:00', 'Salon', 'Filosofia', 'Academicos'),
-(273, 100272, 10272, '2022-04-13 14:27:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
-(274, 100273, 10273, '2022-06-03 07:20:00', 'Rectoria', 'Fisica', 'Academicos'),
-(275, 100274, 10274, '2022-01-30 08:56:00', 'Unidad', 'Fisica', 'Academicos'),
-(276, 100275, 10275, '2022-04-21 15:20:00', 'Sala de Profesores', 'Español', 'Academicos'),
-(277, 100276, 10276, '2022-01-26 11:52:00', 'Unidad', 'Artes', 'Otros'),
-(278, 100277, 10277, '2022-05-01 13:59:00', 'Rectoria', 'Español', 'Otros'),
-(279, 100278, 10278, '2022-06-15 07:19:00', 'Rectoria', 'Fisica', 'Otros'),
-(280, 100279, 10279, '2022-04-09 12:41:00', 'Salon', 'Artes', 'Otros'),
-(281, 100280, 10280, '2022-07-23 12:46:00', 'Unidad', 'Politica', 'Academicos'),
-(282, 100281, 10281, '2022-05-13 09:02:00', 'Rectoria', 'Quimica', 'Otros'),
-(283, 100282, 10282, '2022-04-08 11:10:00', 'Sala de Profesores', 'Español', 'Otros'),
-(284, 100283, 10283, '2022-04-22 11:41:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
-(285, 100284, 10284, '2022-04-06 10:05:00', 'Salon', 'Quimica', 'Academicos'),
-(286, 100285, 10285, '2022-02-14 13:29:00', 'Unidad', 'Filosofia', 'Academicos'),
-(287, 100286, 10286, '2022-01-26 16:14:00', 'Unidad', 'Quimica', 'Academicos'),
-(288, 100287, 10287, '2022-03-11 14:57:00', 'Unidad', 'Fisica', 'Academicos'),
-(289, 100288, 10288, '2022-06-01 12:39:00', 'Rectoria', 'Quimica', 'Otros'),
-(290, 100289, 10289, '2022-03-25 07:38:00', 'Unidad', 'Politica', 'Otros'),
-(291, 100290, 10290, '2022-06-23 11:47:00', 'Sala de Profesores', 'Fisica', 'Otros'),
-(292, 100291, 10291, '2022-08-16 08:50:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
-(293, 100292, 10292, '2022-08-10 09:08:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(294, 100293, 10293, '2022-05-13 07:50:00', 'Unidad', 'Español', 'Academicos'),
-(295, 100294, 10294, '2022-02-24 12:45:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(296, 100295, 10295, '2022-06-25 09:52:00', 'Rectoria', 'Sociales', 'Otros'),
-(297, 100296, 10296, '2022-01-21 07:56:00', 'Unidad', 'Artes', 'Academicos'),
-(298, 100297, 10297, '2022-02-22 15:30:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(299, 100298, 10298, '2022-04-25 09:22:00', 'Salon', 'Artes', 'Academicos'),
-(300, 100299, 10299, '2022-04-24 08:05:00', 'Rectoria', 'Filosofia', 'Academicos'),
-(301, 100300, 10300, '2022-02-28 12:22:00', 'Unidad', 'Ingles', 'Otros'),
-(302, 100301, 10301, '2022-03-20 14:31:00', 'Sala de Profesores', 'Quimica', 'Otros'),
-(303, 100302, 10302, '2022-08-17 13:48:00', 'Salon', 'Sociales', 'Otros'),
-(304, 100303, 10303, '2022-03-12 16:06:00', 'Rectoria', 'Sociales', 'Academicos'),
-(305, 100304, 10304, '2022-03-02 10:03:00', 'Salon', 'Tecnologia', 'Academicos'),
-(306, 100305, 10305, '2022-07-17 11:19:00', 'Salon', 'Edu.Fisica', 'Academicos'),
-(307, 100306, 10306, '2022-01-30 13:37:00', 'Rectoria', 'Quimica', 'Academicos'),
-(308, 100307, 10307, '2022-03-08 11:45:00', 'Sala de Profesores', 'Fisica', 'Academicos'),
-(309, 100308, 10308, '2022-08-16 10:51:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
-(310, 100309, 10309, '2022-03-08 15:54:00', 'Salon', 'Fisica', 'Otros'),
-(311, 100310, 10310, '2022-02-22 15:21:00', 'Salon', 'Politica', 'Academicos'),
-(312, 100311, 10311, '2022-07-14 16:14:00', 'Salon', 'Tecnologia', 'Otros'),
-(313, 100312, 10312, '2022-03-26 16:24:00', 'Rectoria', 'Español', 'Academicos'),
-(314, 100313, 10313, '2022-07-29 15:22:00', 'Rectoria', 'Politica', 'Academicos'),
-(315, 100314, 10314, '2022-08-24 12:51:00', 'Unidad', 'Ingles', 'Academicos'),
-(316, 100315, 10315, '2022-01-07 08:12:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
-(317, 100316, 10316, '2022-04-28 10:52:00', 'Unidad', 'Filosofia', 'Academicos'),
-(318, 100317, 10317, '2022-03-26 10:05:00', 'Sala de Profesores', 'Ingles', 'Otros'),
-(319, 100318, 10318, '2022-03-12 12:42:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(320, 100319, 10319, '2022-05-31 16:19:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
-(321, 100320, 10320, '2022-03-23 10:41:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
-(322, 100321, 10321, '2022-06-30 16:13:00', 'Sala de Profesores', 'Español', 'Otros'),
-(323, 100322, 10322, '2022-08-12 11:59:00', 'Unidad', 'Sociales', 'Otros'),
-(324, 100323, 10323, '2022-02-19 14:03:00', 'Sala de Profesores', 'Ingles', 'Otros'),
-(325, 100324, 10324, '2022-07-11 16:01:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(326, 100325, 10325, '2022-05-01 07:34:00', 'Unidad', 'Politica', 'Otros'),
-(327, 100326, 10326, '2022-06-25 11:14:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
-(328, 100327, 10327, '2022-01-11 09:28:00', 'Unidad', 'Matematicas', 'Academicos'),
-(329, 100328, 10328, '2022-08-16 15:57:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
-(330, 100329, 10329, '2022-06-11 15:59:00', 'Rectoria', 'Sociales', 'Academicos'),
-(331, 100330, 10330, '2022-06-01 13:55:00', 'Salon', 'Fisica', 'Otros'),
-(332, 100331, 10331, '2022-02-10 15:25:00', 'Rectoria', 'Filosofia', 'Academicos'),
-(333, 100332, 10332, '2022-07-22 15:29:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(334, 100333, 10333, '2022-08-07 09:16:00', 'Salon', 'Tecnologia', 'Academicos'),
-(335, 100334, 10334, '2022-03-10 11:26:00', 'Salon', 'Español', 'Otros'),
-(336, 100335, 10335, '2022-01-27 15:03:00', 'Rectoria', 'Politica', 'Academicos'),
-(337, 100336, 10336, '2022-02-07 12:38:00', 'Unidad', 'Tecnologia', 'Academicos'),
-(338, 100337, 10337, '2022-08-11 07:06:00', 'Salon', 'Matematicas', 'Otros'),
-(339, 100338, 10338, '2022-08-24 09:05:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
-(340, 100339, 10339, '2022-05-04 15:32:00', 'Unidad', 'Matematicas', 'Otros'),
-(341, 100340, 10340, '2022-06-08 08:00:00', 'Unidad', 'Quimica', 'Academicos'),
-(342, 100341, 10341, '2022-01-19 09:25:00', 'Unidad', 'Ingles', 'Academicos'),
-(343, 100342, 10342, '2022-04-28 08:28:00', 'Rectoria', 'Filosofia', 'Otros'),
-(344, 100343, 10343, '2022-07-10 10:04:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
-(345, 100344, 10344, '2022-06-19 08:03:00', 'Rectoria', 'Sociales', 'Otros'),
-(346, 100345, 10345, '2022-03-27 07:38:00', 'Salon', 'Tecnologia', 'Academicos'),
-(347, 100346, 10346, '2022-02-16 13:52:00', 'Salon', 'Edu.Fisica', 'Academicos'),
-(348, 100347, 10347, '2022-04-09 15:03:00', 'Unidad', 'Tecnologia', 'Academicos'),
-(349, 100348, 10348, '2022-06-15 09:03:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
-(350, 100349, 10349, '2022-03-24 14:27:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(351, 100350, 10350, '2022-03-31 11:46:00', 'Unidad', 'Filosofia', 'Academicos'),
-(352, 100351, 10351, '2022-08-03 07:57:00', 'Sala de Profesores', 'Ingles', 'Otros'),
-(353, 100352, 10352, '2022-02-19 12:28:00', 'Rectoria', 'Politica', 'Otros'),
-(354, 100353, 10353, '2022-03-26 15:38:00', 'Unidad', 'Filosofia', 'Otros'),
-(355, 100354, 10354, '2022-01-06 10:00:00', 'Salon', 'Quimica', 'Otros'),
-(356, 100355, 10355, '2022-06-25 09:09:00', 'Rectoria', 'Fisica', 'Otros'),
-(357, 100356, 10356, '2022-03-18 13:45:00', 'Salon', 'Español', 'Academicos'),
-(358, 100357, 10357, '2022-03-22 12:11:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
-(359, 100358, 10358, '2022-03-28 13:01:00', 'Salon', 'Tecnologia', 'Otros'),
-(360, 100359, 10359, '2022-04-16 07:53:00', 'Rectoria', 'Quimica', 'Otros'),
-(361, 100360, 10360, '2022-08-04 15:21:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
-(362, 100361, 10361, '2022-01-22 15:30:00', 'Salon', 'Español', 'Academicos'),
-(363, 100362, 10362, '2022-01-18 07:53:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
-(364, 100363, 10363, '2022-02-22 09:14:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
-(365, 100364, 10364, '2022-06-04 13:15:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(366, 100365, 10365, '2022-03-02 12:22:00', 'Sala de Profesores', 'Español', 'Otros'),
-(367, 100366, 10366, '2022-01-18 16:26:00', 'Rectoria', 'Politica', 'Academicos'),
-(368, 100367, 10367, '2022-01-03 14:15:00', 'Salon', 'Filosofia', 'Otros'),
-(369, 100368, 10368, '2022-03-07 11:32:00', 'Unidad', 'Español', 'Otros'),
-(370, 100369, 10369, '2022-07-25 07:01:00', 'Sala de Profesores', 'Español', 'Otros'),
-(371, 100370, 10370, '2022-05-25 15:24:00', 'Unidad', 'Artes', 'Otros'),
-(372, 100371, 10371, '2022-07-24 14:11:00', 'Salon', 'Politica', 'Otros'),
-(373, 100372, 10372, '2022-06-16 08:34:00', 'Sala de Profesores', 'Español', 'Otros'),
-(374, 100373, 10373, '2022-01-30 16:08:00', 'Unidad', 'Sociales', 'Otros'),
-(375, 100374, 10374, '2022-01-10 12:16:00', 'Salon', 'Español', 'Academicos'),
-(376, 100375, 10375, '2022-01-29 07:40:00', 'Salon', 'Artes', 'Academicos'),
-(377, 100376, 10376, '2022-03-12 07:19:00', 'Salon', 'Fisica', 'Academicos'),
-(378, 100377, 10377, '2022-01-29 14:35:00', 'Rectoria', 'Politica', 'Academicos'),
-(379, 100378, 10378, '2022-07-19 08:24:00', 'Unidad', 'Filosofia', 'Otros'),
-(380, 100379, 10379, '2022-03-03 09:43:00', 'Salon', 'Ingles', 'Otros'),
-(381, 100380, 10380, '2022-03-19 10:47:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
-(382, 100381, 10381, '2022-01-30 11:37:00', 'Salon', 'Matematicas', 'Academicos'),
-(383, 100382, 10382, '2022-08-25 16:40:00', 'Rectoria', 'Ingles', 'Academicos'),
-(384, 100383, 10383, '2022-08-13 14:54:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
-(385, 100384, 10384, '2022-08-05 11:53:00', 'Rectoria', 'Politica', 'Academicos'),
-(386, 100385, 10385, '2022-07-24 13:56:00', 'Unidad', 'Artes', 'Otros'),
-(387, 100386, 10386, '2022-02-12 13:04:00', 'Rectoria', 'Quimica', 'Academicos'),
-(388, 100387, 10387, '2022-02-09 11:28:00', 'Unidad', 'Español', 'Otros'),
-(389, 100388, 10388, '2022-01-27 11:37:00', 'Rectoria', 'Quimica', 'Otros'),
-(390, 100389, 10389, '2022-02-02 07:43:00', 'Salon', 'Español', 'Otros'),
-(391, 100390, 10390, '2022-07-26 07:05:00', 'Rectoria', 'Sociales', 'Academicos'),
-(392, 100391, 10391, '2022-03-26 11:03:00', 'Unidad', 'Quimica', 'Otros'),
-(393, 100392, 10392, '2022-02-15 14:26:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
-(394, 100393, 10393, '2022-07-29 14:24:00', 'Rectoria', 'Ingles', 'Otros'),
-(395, 100394, 10394, '2022-03-25 12:53:00', 'Salon', 'Quimica', 'Otros'),
-(396, 100395, 10395, '2022-02-16 09:27:00', 'Unidad', 'Politica', 'Otros'),
-(397, 100396, 10396, '2022-02-19 16:04:00', 'Unidad', 'Fisica', 'Otros'),
-(398, 100397, 10397, '2022-02-05 09:08:00', 'Salon', 'Politica', 'Otros'),
-(399, 100398, 10398, '2022-03-05 12:39:00', 'Rectoria', 'Quimica', 'Otros'),
-(400, 100399, 10399, '2022-06-01 15:50:00', 'Unidad', 'Fisica', 'Academicos'),
-(401, 100400, 10400, '2022-07-14 13:47:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
-(402, 100401, 10401, '2022-03-08 09:59:00', 'Unidad', 'Quimica', 'Otros'),
-(403, 100402, 10402, '2022-06-05 13:14:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(404, 100403, 10403, '2022-05-11 10:49:00', 'Rectoria', 'Sociales', 'Otros'),
-(405, 100404, 10404, '2022-03-10 08:45:00', 'Rectoria', 'Ingles', 'Otros'),
-(406, 100405, 10405, '2022-03-29 11:23:00', 'Salon', 'Filosofia', 'Otros'),
-(407, 100406, 10406, '2022-08-08 12:35:00', 'Salon', 'Artes', 'Academicos'),
-(408, 100407, 10407, '2022-07-11 15:03:00', 'Unidad', 'Sociales', 'Otros'),
-(409, 100408, 10408, '2022-06-15 07:12:00', 'Rectoria', 'Matematicas', 'Otros'),
-(410, 100409, 10409, '2022-08-23 15:24:00', 'Unidad', 'Tecnologia', 'Otros'),
-(411, 100410, 10410, '2022-02-06 14:18:00', 'Unidad', 'Quimica', 'Academicos'),
-(412, 100411, 10411, '2022-07-29 13:03:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
-(413, 100412, 10412, '2022-01-07 12:41:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
-(414, 100413, 10413, '2022-01-11 14:56:00', 'Unidad', 'Fisica', 'Otros'),
-(415, 100414, 10414, '2022-08-05 10:57:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(416, 100415, 10415, '2022-05-02 08:24:00', 'Salon', 'Fisica', 'Otros'),
-(417, 100416, 10416, '2022-04-20 07:46:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
-(418, 100417, 10417, '2022-05-31 07:03:00', 'Unidad', 'Filosofia', 'Otros'),
-(419, 100418, 10418, '2022-04-09 14:01:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(420, 100419, 10419, '2022-04-17 09:01:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(421, 100420, 10420, '2022-06-21 12:59:00', 'Rectoria', 'Sociales', 'Otros'),
-(422, 100421, 10421, '2022-06-06 13:05:00', 'Sala de Profesores', 'Artes', 'Otros'),
-(423, 100422, 10422, '2022-06-30 08:17:00', 'Sala de Profesores', 'Ingles', 'Otros'),
-(424, 100423, 10423, '2022-05-12 12:35:00', 'Rectoria', 'Artes', 'Otros'),
-(425, 100424, 10424, '2022-03-23 14:31:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
-(426, 100425, 10425, '2022-05-07 13:16:00', 'Unidad', 'Español', 'Academicos'),
-(427, 100426, 10426, '2022-08-11 07:09:00', 'Salon', 'Tecnologia', 'Otros'),
-(428, 100427, 10427, '2022-07-31 09:42:00', 'Salon', 'Filosofia', 'Otros'),
-(429, 100428, 10428, '2022-04-12 12:01:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(430, 100429, 10429, '2022-05-30 15:16:00', 'Rectoria', 'Politica', 'Academicos'),
-(431, 100430, 10430, '2022-04-11 13:31:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(432, 100431, 10431, '2022-04-28 07:02:00', 'Rectoria', 'Tecnologia', 'Academicos'),
-(433, 100432, 10432, '2022-02-18 09:35:00', 'Unidad', 'Quimica', 'Otros'),
-(434, 100433, 10433, '2022-01-03 15:33:00', 'Unidad', 'Ingles', 'Academicos'),
-(435, 100434, 10434, '2022-03-05 09:43:00', 'Rectoria', 'Politica', 'Academicos'),
-(436, 100435, 10435, '2022-02-01 07:30:00', 'Sala de Profesores', 'Ingles', 'Academicos'),
-(437, 100436, 10436, '2022-04-02 11:59:00', 'Unidad', 'Tecnologia', 'Otros'),
-(438, 100437, 10437, '2022-02-14 07:57:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
-(439, 100438, 10438, '2022-01-17 14:39:00', 'Rectoria', 'Sociales', 'Otros'),
-(440, 100439, 10439, '2022-03-23 15:00:00', 'Salon', 'Ingles', 'Otros'),
-(441, 100440, 10440, '2022-04-09 08:48:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(442, 100441, 10441, '2022-06-18 12:50:00', 'Rectoria', 'Quimica', 'Otros'),
-(443, 100442, 10442, '2022-01-02 13:36:00', 'Unidad', 'Quimica', 'Academicos'),
-(444, 100443, 10443, '2022-01-09 14:48:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(445, 100444, 10444, '2022-02-14 10:19:00', 'Sala de Profesores', 'Ingles', 'Otros'),
-(446, 100445, 10445, '2022-02-20 10:33:00', 'Unidad', 'Quimica', 'Academicos'),
-(447, 100446, 10446, '2022-06-05 07:50:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
-(448, 100447, 10447, '2022-02-27 15:18:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(449, 100448, 10448, '2022-06-20 15:42:00', 'Sala de Profesores', 'Fisica', 'Otros'),
-(450, 100449, 10449, '2022-08-19 10:00:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(451, 100450, 10450, '2022-07-10 16:41:00', 'Unidad', 'Ingles', 'Academicos'),
-(452, 100451, 10451, '2022-05-05 10:45:00', 'Salon', 'Politica', 'Academicos'),
-(453, 100452, 10452, '2022-02-16 14:59:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(454, 100453, 10453, '2022-07-21 16:51:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(455, 100454, 10454, '2022-08-13 13:09:00', 'Rectoria', 'Ingles', 'Academicos'),
-(456, 100455, 10455, '2022-01-02 12:07:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(457, 100456, 10456, '2022-03-17 15:27:00', 'Sala de Profesores', 'Fisica', 'Otros'),
-(458, 100457, 10457, '2022-06-01 12:22:00', 'Rectoria', 'Tecnologia', 'Academicos'),
-(459, 100458, 10458, '2022-03-13 09:32:00', 'Unidad', 'Sociales', 'Academicos'),
-(460, 100459, 10459, '2022-06-25 16:00:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(461, 100460, 10460, '2022-06-19 15:51:00', 'Unidad', 'Quimica', 'Academicos'),
-(462, 100461, 10461, '2022-06-04 07:36:00', 'Rectoria', 'Matematicas', 'Academicos'),
-(463, 100462, 10462, '2022-05-13 08:37:00', 'Salon', 'Sociales', 'Otros'),
-(464, 100463, 10463, '2022-01-30 09:55:00', 'Rectoria', 'Matematicas', 'Academicos'),
-(465, 100464, 10464, '2022-01-12 16:54:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
-(466, 100465, 10465, '2022-07-19 14:27:00', 'Rectoria', 'Español', 'Academicos'),
-(467, 100466, 10466, '2022-02-01 10:20:00', 'Unidad', 'Español', 'Academicos'),
-(468, 100467, 10467, '2022-05-27 07:55:00', 'Salon', 'Filosofia', 'Academicos'),
-(469, 100468, 10468, '2022-03-05 08:48:00', 'Salon', 'Edu.Fisica', 'Academicos'),
-(470, 100469, 10469, '2022-04-23 13:30:00', 'Sala de Profesores', 'Politica', 'Academicos'),
-(471, 100470, 10470, '2022-05-17 09:05:00', 'Unidad', 'Sociales', 'Otros'),
-(472, 100471, 10471, '2022-08-25 10:04:00', 'Rectoria', 'Artes', 'Otros'),
-(473, 100472, 10472, '2022-08-09 12:11:00', 'Rectoria', 'Tecnologia', 'Otros'),
-(474, 100473, 10473, '2022-01-11 16:38:00', 'Rectoria', 'Fisica', 'Academicos'),
-(475, 100474, 10474, '2022-07-22 08:53:00', 'Sala de Profesores', 'Sociales', 'Otros'),
-(476, 100475, 10475, '2022-05-27 08:22:00', 'Salon', 'Filosofia', 'Academicos'),
-(477, 100476, 10476, '2022-08-20 15:12:00', 'Salon', 'Quimica', 'Otros'),
-(478, 100477, 10477, '2022-03-22 14:41:00', 'Unidad', 'Fisica', 'Academicos'),
-(479, 100478, 10478, '2022-02-27 10:34:00', 'Sala de Profesores', 'Fisica', 'Otros'),
-(480, 100479, 10479, '2022-02-06 08:08:00', 'Salon', 'Fisica', 'Academicos'),
-(481, 100480, 10480, '2022-01-06 14:58:00', 'Rectoria', 'Artes', 'Academicos'),
-(482, 100481, 10481, '2022-08-11 12:46:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
-(483, 100482, 10482, '2022-07-12 08:12:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
-(484, 100483, 10483, '2022-02-27 11:24:00', 'Rectoria', 'Sociales', 'Otros'),
-(485, 100484, 10484, '2022-07-04 15:12:00', 'Salon', 'Quimica', 'Academicos'),
-(486, 100485, 10485, '2022-04-15 07:26:00', 'Sala de Profesores', 'Español', 'Otros'),
-(487, 100486, 10486, '2022-03-12 10:52:00', 'Unidad', 'Ingles', 'Academicos'),
-(488, 100487, 10487, '2022-06-28 08:43:00', 'Rectoria', 'Quimica', 'Academicos'),
-(489, 100488, 10488, '2022-03-23 13:09:00', 'Sala de Profesores', 'Artes', 'Academicos'),
-(490, 100489, 10489, '2022-03-11 11:11:00', 'Unidad', 'Edu.Fisica', 'Otros'),
-(491, 100490, 10490, '2022-02-23 07:54:00', 'Rectoria', 'Español', 'Academicos'),
-(492, 100491, 10491, '2022-05-09 09:03:00', 'Rectoria', 'Fisica', 'Academicos'),
-(493, 100492, 10492, '2022-06-02 07:41:00', 'Sala de Profesores', 'Politica', 'Otros'),
-(494, 100493, 10493, '2022-02-16 11:11:00', 'Rectoria', 'Filosofia', 'Academicos'),
-(495, 100494, 10494, '2022-06-20 11:04:00', 'Rectoria', 'Ingles', 'Academicos'),
-(496, 100495, 10495, '2022-02-11 14:18:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
-(497, 100496, 10496, '2022-04-05 08:39:00', 'Rectoria', 'Español', 'Otros'),
-(498, 100497, 10497, '2022-04-17 07:01:00', 'Salon', 'Artes', 'Academicos'),
-(499, 100498, 10498, '2022-04-20 12:22:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
-(500, 100499, 10499, '2022-01-07 09:23:00', 'Rectoria', 'Español', 'Otros');
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `direccionestudiantes`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `direccionestudiantes` (
-`idestudiantes` int(11)
-,`lugar` varchar(20)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `estudiante`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `estudiante` (
-`idestudiantes` int(11)
-,`apellidos` varchar(45)
-,`nombres` varchar(20)
-,`grado` int(2)
-,`seccion` int(2)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `estudiantes`
---
-
 CREATE TABLE `estudiantes` (
-  `idestudiantes` int(11) NOT NULL,
+  `idestudiantes` int(11) NOT NULL PRIMARY KEY,
   `apellidos` varchar(45) NOT NULL,
   `nombres` varchar(20) NOT NULL,
   `grado` int(2) NOT NULL,
   `seccion` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `estudiantes`
---
+
+CREATE TABLE `profesores` (
+  `idProfesor` int(11) NOT NULL PRIMARY KEY,
+  `disponibilidad` varchar(20) NOT NULL,
+  `asignaturaDocente` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `citas` (
+  `idCitas` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `idProfesor` int(11) NOT NULL,
+  `idEstudiante` int(15) NOT NULL,
+  `fechahoraCita` datetime NOT NULL,
+  `lugar` varchar(20) NOT NULL,
+  `asignatura` varchar(20) NOT NULL,
+  `motivo` varchar(12) NOT NULL,
+  FOREIGN KEY (`idProfesor`) REFERENCES `profesores`(`idProfesor`),
+  FOREIGN KEY (`idEstudiante`) REFERENCES `estudiantes`(`idestudiantes`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 
 INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES
 (10000, 'Facello', 'Alejandra', 10, 7),
@@ -1184,74 +639,8 @@ INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `se
 (10582, 'Stille', 'Alfonso', 8, 17),
 (10583, 'Papastamatiou', 'Alonso', 8, 22);
 
--- --------------------------------------------------------
 
---
--- Estructura Stand-in para la vista `estudiantesdeonce`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `estudiantesdeonce` (
-`apellidos` varchar(45)
-,`nombres` varchar(20)
-,`idestudiantes` int(11)
-);
 
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `login`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `login` (
-`nombres` varchar(20)
-,`apellidos` varchar(45)
-,`idestudiantes` int(11)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `permisoestudiante`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `permisoestudiante` (
-`nombres` varchar(20)
-,`apellidos` varchar(45)
-,`grado` int(2)
-,`motivo` varchar(12)
-,`idestudiantes` int(11)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `problemamatematicaestudiante`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `problemamatematicaestudiante` (
-`apellidos` varchar(45)
-,`nombres` varchar(20)
-,`idestudiantes` int(11)
-,`asignatura` varchar(20)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `profesores`
---
-
-CREATE TABLE `profesores` (
-  `idProfesor` int(11) NOT NULL,
-  `disponibilidad` varchar(20) NOT NULL,
-  `asignaturaDocente` varchar(50) NOT NULL,
-  `apellido` varchar(50) NOT NULL,
-  `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `profesores`
---
 
 INSERT INTO `profesores` (`idProfesor`, `disponibilidad`, `asignaturaDocente`, `apellido`, `nombre`) VALUES
 (100001, 'No Disponible', 'Ética', 'Simmel', 'Uinam'),
@@ -2123,6 +1512,10 @@ INSERT INTO `profesores` (`idProfesor`, `disponibilidad`, `asignaturaDocente`, `
 (100867, 'Disponible', 'Religión', 'Skafidas', 'Irene'),
 (100868, 'No Disponible', 'Matemáticas', 'Spataro', 'Aiman'),
 (100869, 'No Disponible', 'Química', 'Slaats', 'Basil');
+
+
+
+
 INSERT INTO `profesores` (`idProfesor`, `disponibilidad`, `asignaturaDocente`, `apellido`, `nombre`) VALUES
 (100870, 'Disponible', 'Ed. Física', 'Reghbati', 'Susanna'),
 (100871, 'No Disponible', 'Inglés', 'Lindenbaum', 'Alper'),
@@ -2254,105 +1647,514 @@ INSERT INTO `profesores` (`idProfesor`, `disponibilidad`, `asignaturaDocente`, `
 (100997, 'Disponible', 'Ética', 'Dymetman', 'Gretta'),
 (100998, 'No Disponible', 'Sociales', 'Zschoche', 'Pramod');
 
--- --------------------------------------------------------
 
---
--- Estructura para la vista `citacionestudiante`
---
-DROP TABLE IF EXISTS `citacionestudiante`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `citacionestudiante`  AS SELECT `e`.`apellidos` AS `apellidos`, `e`.`nombres` AS `nombres`, `e`.`idestudiantes` AS `idestudiantes`, `c`.`lugar` AS `lugar` FROM (`estudiantes` `e` join `citas` `c`) WHERE `e`.`idestudiantes` = `c`.`idEstudiante` AND `e`.`nombres` like 'c%' AND `c`.`lugar` = 'Rectoria''Rectoria'  ;
 
--- --------------------------------------------------------
+INSERT INTO `citas` (`idCitas`, `idProfesor`, `idEstudiante`, `fechahoraCita`, `lugar`, `asignatura`, `motivo`) VALUES
+(2, 100001, 10001, '2022-08-25 09:13:00', 'Unidad', 'Fisica', 'Otros'),
+(3, 100002, 10002, '2022-04-13 13:23:00', 'Salon', 'Tecnologia', 'Academicos'),
+(4, 100003, 10003, '2022-08-01 07:08:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
+(5, 100004, 10004, '2022-01-06 09:55:00', 'Unidad', 'Artes', 'Otros'),
+(6, 100005, 10005, '2022-08-07 16:43:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
+(7, 100006, 10006, '2022-04-15 09:58:00', 'Salon', 'Quimica', 'Academicos'),
+(8, 100007, 10007, '2022-04-25 09:07:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(9, 100008, 10008, '2022-01-16 15:20:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(10, 100009, 10009, '2022-02-14 16:44:00', 'Salon', 'Tecnologia', 'Academicos'),
+(11, 100010, 10010, '2022-04-08 10:38:00', 'Rectoria', 'Artes', 'Academicos'),
+(12, 100011, 10011, '2022-05-13 08:15:00', 'Salon', 'Fisica', 'Otros'),
+(13, 100012, 10012, '2022-05-21 16:22:00', 'Salon', 'Tecnologia', 'Academicos'),
+(14, 100013, 10013, '2022-01-09 07:20:00', 'Sala de Profesores', 'Politica', 'Otros'),
+(15, 100014, 10014, '2022-02-20 13:40:00', 'Salon', 'Ingles', 'Otros'),
+(16, 100015, 10015, '2022-07-08 14:00:00', 'Salon', 'Edu.Fisica', 'Otros'),
+(17, 100016, 10016, '2022-01-22 15:20:00', 'Salon', 'Español', 'Academicos'),
+(18, 100017, 10017, '2022-06-27 13:42:00', 'Salon', 'Artes', 'Otros'),
+(19, 100018, 10018, '2022-08-14 07:45:00', 'Salon', 'Matematicas', 'Otros'),
+(20, 100019, 10019, '2022-08-17 09:26:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(21, 100020, 10020, '2022-08-03 13:53:00', 'Salon', 'Edu.Fisica', 'Otros'),
+(22, 100021, 10021, '2022-07-08 11:15:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
+(23, 100022, 10022, '2022-03-18 07:54:00', 'Salon', 'Sociales', 'Academicos'),
+(24, 100023, 10023, '2022-02-09 16:25:00', 'Rectoria', 'Sociales', 'Academicos'),
+(25, 100024, 10024, '2022-02-21 15:41:00', 'Rectoria', 'Politica', 'Otros'),
+(26, 100025, 10025, '2022-04-16 13:36:00', 'Salon', 'Politica', 'Academicos'),
+(27, 100026, 10026, '2022-06-18 12:13:00', 'Salon', 'Filosofia', 'Otros'),
+(28, 100027, 10027, '2022-04-06 10:51:00', 'Salon', 'Quimica', 'Academicos'),
+(29, 100028, 10028, '2022-07-24 12:28:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
+(30, 100029, 10029, '2022-02-08 16:45:00', 'Salon', 'Ingles', 'Otros'),
+(31, 100030, 10030, '2022-07-30 13:55:00', 'Sala de Profesores', 'Español', 'Otros'),
+(32, 100031, 10031, '2022-04-26 10:43:00', 'Unidad', 'Filosofia', 'Otros'),
+(33, 100032, 10032, '2022-02-15 07:51:00', 'Salon', 'Matematicas', 'Otros'),
+(34, 100033, 10033, '2022-08-22 12:17:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(35, 100034, 10034, '2022-02-03 07:46:00', 'Unidad', 'Tecnologia', 'Academicos'),
+(36, 100035, 10035, '2022-01-12 07:53:00', 'Salon', 'Sociales', 'Otros'),
+(37, 100036, 10036, '2022-07-03 09:11:00', 'Unidad', 'Fisica', 'Otros'),
+(38, 100037, 10037, '2022-01-19 09:26:00', 'Salon', 'Quimica', 'Academicos'),
+(39, 100038, 10038, '2022-07-29 08:38:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(40, 100039, 10039, '2022-03-31 13:58:00', 'Salon', 'Artes', 'Otros'),
+(41, 100040, 10040, '2022-07-11 14:06:00', 'Rectoria', 'Fisica', 'Otros'),
+(42, 100041, 10041, '2022-03-24 12:07:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
+(43, 100042, 10042, '2022-03-13 16:32:00', 'Salon', 'Politica', 'Otros'),
+(44, 100043, 10043, '2022-07-22 10:28:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
+(45, 100044, 10044, '2022-05-27 10:29:00', 'Unidad', 'Matematicas', 'Academicos'),
+(46, 100045, 10045, '2022-06-29 07:48:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(47, 100046, 10046, '2022-02-20 13:36:00', 'Unidad', 'Filosofia', 'Otros'),
+(48, 100047, 10047, '2022-03-30 07:55:00', 'Rectoria', 'Fisica', 'Otros'),
+(49, 100048, 10048, '2022-03-28 13:55:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
+(50, 100049, 10049, '2022-03-08 09:37:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(51, 100050, 10050, '2022-07-19 11:39:00', 'Rectoria', 'Politica', 'Otros'),
+(52, 100051, 10051, '2022-01-01 13:42:00', 'Rectoria', 'Filosofia', 'Academicos'),
+(53, 100052, 10052, '2022-06-12 09:16:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(54, 100053, 10053, '2022-03-16 08:43:00', 'Salon', 'Fisica', 'Otros'),
+(55, 100054, 10054, '2022-06-11 13:53:00', 'Salon', 'Filosofia', 'Otros'),
+(56, 100055, 10055, '2022-02-21 09:48:00', 'Salon', 'Filosofia', 'Otros'),
+(57, 100056, 10056, '2022-08-14 10:40:00', 'Salon', 'Artes', 'Academicos'),
+(58, 100057, 10057, '2022-07-01 10:41:00', 'Salon', 'Quimica', 'Academicos'),
+(59, 100058, 10058, '2022-08-23 08:58:00', 'Unidad', 'Tecnologia', 'Otros'),
+(60, 100059, 10059, '2022-05-16 14:53:00', 'Salon', 'Filosofia', 'Otros'),
+(61, 100060, 10060, '2022-03-09 07:45:00', 'Rectoria', 'Matematicas', 'Academicos'),
+(62, 100061, 10061, '2022-07-27 15:10:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(63, 100062, 10062, '2022-07-27 11:01:00', 'Unidad', 'Artes', 'Academicos'),
+(64, 100063, 10063, '2022-06-05 08:53:00', 'Unidad', 'Sociales', 'Academicos'),
+(65, 100064, 10064, '2022-05-16 16:23:00', 'Rectoria', 'Fisica', 'Otros'),
+(66, 100065, 10065, '2022-03-06 15:50:00', 'Unidad', 'Tecnologia', 'Academicos'),
+(67, 100066, 10066, '2022-08-14 15:11:00', 'Unidad', 'Quimica', 'Academicos'),
+(68, 100067, 10067, '2022-03-05 11:27:00', 'Salon', 'Quimica', 'Academicos'),
+(69, 100068, 10068, '2022-03-25 16:04:00', 'Unidad', 'Filosofia', 'Academicos'),
+(70, 100069, 10069, '2022-02-23 09:40:00', 'Salon', 'Tecnologia', 'Otros'),
+(71, 100070, 10070, '2022-07-18 13:18:00', 'Sala de Profesores', 'Fisica', 'Academicos'),
+(72, 100071, 10071, '2022-06-20 13:42:00', 'Sala de Profesores', 'Ingles', 'Otros'),
+(73, 100072, 10072, '2022-06-30 10:35:00', 'Rectoria', 'Sociales', 'Otros'),
+(74, 100073, 10073, '2022-02-13 08:50:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(75, 100074, 10074, '2022-07-01 10:07:00', 'Rectoria', 'Filosofia', 'Academicos'),
+(76, 100075, 10075, '2022-06-17 07:00:00', 'Salon', 'Tecnologia', 'Otros'),
+(77, 100076, 10076, '2022-06-17 07:04:00', 'Unidad', 'Filosofia', 'Academicos'),
+(78, 100077, 10077, '2022-07-04 07:06:00', 'Rectoria', 'Quimica', 'Academicos'),
+(79, 100078, 10078, '2022-01-23 16:15:00', 'Unidad', 'Filosofia', 'Academicos'),
+(80, 100079, 10079, '2022-01-20 15:05:00', 'Unidad', 'Fisica', 'Otros'),
+(81, 100080, 10080, '2022-07-10 14:45:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
+(82, 100081, 10081, '2022-04-07 08:59:00', 'Sala de Profesores', 'Politica', 'Otros'),
+(83, 100082, 10082, '2022-04-23 12:54:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
+(84, 100083, 10083, '2022-07-06 14:18:00', 'Unidad', 'Sociales', 'Otros'),
+(85, 100084, 10084, '2022-02-22 10:08:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
+(86, 100085, 10085, '2022-02-23 13:08:00', 'Unidad', 'Quimica', 'Academicos'),
+(87, 100086, 10086, '2022-06-09 11:19:00', 'Sala de Profesores', 'Español', 'Otros'),
+(88, 100087, 10087, '2022-05-07 11:57:00', 'Unidad', 'Ingles', 'Otros'),
+(89, 100088, 10088, '2022-08-03 07:46:00', 'Salon', 'Fisica', 'Academicos'),
+(90, 100089, 10089, '2022-02-17 07:36:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
+(91, 100090, 10090, '2022-02-05 13:53:00', 'Unidad', 'Quimica', 'Otros'),
+(92, 100091, 10091, '2022-08-11 12:56:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
+(93, 100092, 10092, '2022-03-05 12:04:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(94, 100093, 10093, '2022-01-14 13:02:00', 'Salon', 'Ingles', 'Academicos'),
+(95, 100094, 10094, '2022-06-29 08:40:00', 'Unidad', 'Sociales', 'Otros'),
+(96, 100095, 10095, '2022-06-26 12:51:00', 'Unidad', 'Fisica', 'Otros'),
+(97, 100096, 10096, '2022-03-25 07:14:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
+(98, 100097, 10097, '2022-08-14 13:00:00', 'Unidad', 'Filosofia', 'Academicos'),
+(99, 100098, 10098, '2022-07-20 13:59:00', 'Rectoria', 'Quimica', 'Otros'),
+(100, 100099, 10099, '2022-04-11 10:41:00', 'Unidad', 'Artes', 'Academicos'),
+(101, 100100, 10100, '2022-07-12 13:14:00', 'Unidad', 'Filosofia', 'Academicos'),
+(102, 100101, 10101, '2022-04-20 12:25:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(103, 100102, 10102, '2022-07-14 08:10:00', 'Sala de Profesores', 'Español', 'Academicos'),
+(104, 100103, 10103, '2022-03-14 10:45:00', 'Unidad', 'Politica', 'Otros'),
+(105, 100104, 10104, '2022-05-08 13:09:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
+(106, 100105, 10105, '2022-03-13 11:03:00', 'Rectoria', 'Politica', 'Academicos'),
+(107, 100106, 10106, '2022-07-11 09:58:00', 'Salon', 'Edu.Fisica', 'Academicos'),
+(108, 100107, 10107, '2022-02-16 07:32:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
+(109, 100108, 10108, '2022-05-12 08:41:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(110, 100109, 10109, '2022-05-07 15:35:00', 'Rectoria', 'Matematicas', 'Academicos'),
+(111, 100110, 10110, '2022-01-19 10:54:00', 'Unidad', 'Sociales', 'Otros'),
+(112, 100111, 10111, '2022-07-31 10:54:00', 'Salon', 'Politica', 'Otros'),
+(113, 100112, 10112, '2022-04-25 10:36:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
+(114, 100113, 10113, '2022-04-22 11:22:00', 'Unidad', 'Artes', 'Academicos'),
+(115, 100114, 10114, '2022-06-17 10:58:00', 'Unidad', 'Artes', 'Academicos'),
+(116, 100115, 10115, '2022-06-04 09:29:00', 'Unidad', 'Politica', 'Otros'),
+(117, 100116, 10116, '2022-05-20 14:09:00', 'Unidad', 'Politica', 'Otros'),
+(118, 100117, 10117, '2022-03-16 10:32:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
+(119, 100118, 10118, '2022-03-07 14:37:00', 'Salon', 'Fisica', 'Otros'),
+(120, 100119, 10119, '2022-05-05 09:05:00', 'Salon', 'Artes', 'Academicos'),
+(121, 100120, 10120, '2022-02-19 09:15:00', 'Rectoria', 'Filosofia', 'Otros'),
+(122, 100121, 10121, '2022-04-07 15:34:00', 'Unidad', 'Matematicas', 'Otros'),
+(123, 100122, 10122, '2022-08-04 16:08:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(124, 100123, 10123, '2022-02-01 11:53:00', 'Unidad', 'Quimica', 'Academicos'),
+(125, 100124, 10124, '2022-08-25 10:05:00', 'Salon', 'Matematicas', 'Otros'),
+(126, 100125, 10125, '2022-04-04 08:51:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(127, 100126, 10126, '2022-02-14 13:13:00', 'Salon', 'Fisica', 'Otros'),
+(128, 100127, 10127, '2022-04-20 10:05:00', 'Rectoria', 'Ingles', 'Academicos'),
+(129, 100128, 10128, '2022-08-04 16:14:00', 'Unidad', 'Politica', 'Academicos'),
+(130, 100129, 10129, '2022-04-18 13:51:00', 'Rectoria', 'Ingles', 'Otros'),
+(131, 100130, 10130, '2022-05-12 14:29:00', 'Rectoria', 'Filosofia', 'Academicos'),
+(132, 100131, 10131, '2022-03-15 13:35:00', 'Rectoria', 'Filosofia', 'Otros'),
+(133, 100132, 10132, '2022-07-23 16:44:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
+(134, 100133, 10133, '2022-03-03 14:26:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(135, 100134, 10134, '2022-05-11 13:18:00', 'Salon', 'Tecnologia', 'Otros'),
+(136, 100135, 10135, '2022-05-06 07:51:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
+(137, 100136, 10136, '2022-07-24 13:26:00', 'Salon', 'Edu.Fisica', 'Academicos'),
+(138, 100137, 10137, '2022-03-01 10:06:00', 'Sala de Profesores', 'Quimica', 'Otros'),
+(139, 100138, 10138, '2022-02-07 11:38:00', 'Sala de Profesores', 'Fisica', 'Otros'),
+(140, 100139, 10139, '2022-01-17 08:04:00', 'Salon', 'Español', 'Otros'),
+(141, 100140, 10140, '2022-08-06 16:11:00', 'Rectoria', 'Ingles', 'Academicos'),
+(142, 100141, 10141, '2022-08-18 13:34:00', 'Salon', 'Matematicas', 'Otros'),
+(143, 100142, 10142, '2022-04-08 11:25:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
+(144, 100143, 10143, '2022-07-22 10:54:00', 'Rectoria', 'Ingles', 'Academicos'),
+(145, 100144, 10144, '2022-08-01 09:30:00', 'Rectoria', 'Filosofia', 'Academicos'),
+(146, 100145, 10145, '2022-03-07 07:15:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
+(147, 100146, 10146, '2022-03-07 11:37:00', 'Sala de Profesores', 'Quimica', 'Otros'),
+(148, 100147, 10147, '2022-07-06 10:08:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(149, 100148, 10148, '2022-02-07 16:22:00', 'Rectoria', 'Fisica', 'Otros'),
+(150, 100149, 10149, '2022-07-06 12:20:00', 'Rectoria', 'Quimica', 'Otros'),
+(151, 100150, 10150, '2022-01-13 07:34:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(152, 100151, 10151, '2022-06-11 11:54:00', 'Unidad', 'Politica', 'Otros'),
+(153, 100152, 10152, '2022-05-07 08:28:00', 'Unidad', 'Fisica', 'Otros'),
+(154, 100153, 10153, '2022-03-11 16:13:00', 'Unidad', 'Filosofia', 'Academicos'),
+(155, 100154, 10154, '2022-06-29 13:04:00', 'Unidad', 'Tecnologia', 'Otros'),
+(156, 100155, 10155, '2022-05-04 11:48:00', 'Rectoria', 'Matematicas', 'Otros'),
+(157, 100156, 10156, '2022-08-07 10:36:00', 'Salon', 'Ingles', 'Otros'),
+(158, 100157, 10157, '2022-02-26 16:51:00', 'Salon', 'Tecnologia', 'Otros'),
+(159, 100158, 10158, '2022-04-21 12:01:00', 'Unidad', 'Artes', 'Otros'),
+(160, 100159, 10159, '2022-03-19 12:20:00', 'Sala de Profesores', 'Fisica', 'Otros'),
+(161, 100160, 10160, '2022-02-27 16:53:00', 'Salon', 'Matematicas', 'Academicos'),
+(162, 100161, 10161, '2022-04-18 12:30:00', 'Salon', 'Politica', 'Otros'),
+(163, 100162, 10162, '2022-02-04 07:36:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
+(164, 100163, 10163, '2022-07-20 10:29:00', 'Rectoria', 'Fisica', 'Academicos'),
+(165, 100164, 10164, '2022-03-13 09:23:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
+(166, 100165, 10165, '2022-03-26 07:37:00', 'Salon', 'Quimica', 'Academicos'),
+(167, 100166, 10166, '2022-01-13 12:01:00', 'Rectoria', 'Sociales', 'Academicos'),
+(168, 100167, 10167, '2022-06-12 11:54:00', 'Salon', 'Español', 'Otros'),
+(169, 100168, 10168, '2022-05-31 10:49:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(170, 100169, 10169, '2022-07-12 09:32:00', 'Salon', 'Ingles', 'Academicos'),
+(171, 100170, 10170, '2022-02-14 08:08:00', 'Salon', 'Matematicas', 'Academicos'),
+(172, 100171, 10171, '2022-06-01 07:58:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
+(173, 100172, 10172, '2022-08-22 12:46:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(174, 100173, 10173, '2022-06-14 07:12:00', 'Salon', 'Fisica', 'Academicos'),
+(175, 100174, 10174, '2022-02-23 07:04:00', 'Rectoria', 'Tecnologia', 'Academicos'),
+(176, 100175, 10175, '2022-03-18 14:29:00', 'Unidad', 'Ingles', 'Otros'),
+(177, 100176, 10176, '2022-07-08 09:39:00', 'Unidad', 'Filosofia', 'Otros'),
+(178, 100177, 10177, '2022-07-11 12:39:00', 'Unidad', 'Quimica', 'Otros'),
+(179, 100178, 10178, '2022-05-24 12:39:00', 'Sala de Profesores', 'Ingles', 'Otros'),
+(180, 100179, 10179, '2022-06-04 11:15:00', 'Unidad', 'Filosofia', 'Otros'),
+(181, 100180, 10180, '2022-01-15 11:05:00', 'Unidad', 'Fisica', 'Otros'),
+(182, 100181, 10181, '2022-03-07 16:15:00', 'Salon', 'Ingles', 'Otros'),
+(183, 100182, 10182, '2022-04-21 10:52:00', 'Rectoria', 'Tecnologia', 'Academicos'),
+(184, 100183, 10183, '2022-08-19 12:28:00', 'Salon', 'Filosofia', 'Otros'),
+(185, 100184, 10184, '2022-04-14 15:37:00', 'Unidad', 'Sociales', 'Otros'),
+(186, 100185, 10185, '2022-01-12 10:37:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(187, 100186, 10186, '2022-02-07 13:03:00', 'Rectoria', 'Fisica', 'Otros'),
+(188, 100187, 10187, '2022-02-09 13:57:00', 'Unidad', 'Tecnologia', 'Otros'),
+(189, 100188, 10188, '2022-05-03 12:47:00', 'Unidad', 'Politica', 'Academicos'),
+(190, 100189, 10189, '2022-03-16 13:35:00', 'Unidad', 'Español', 'Academicos'),
+(191, 100190, 10190, '2022-04-12 15:14:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
+(192, 100191, 10191, '2022-03-31 10:29:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
+(193, 100192, 10192, '2022-08-23 13:54:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(194, 100193, 10193, '2022-02-09 15:29:00', 'Unidad', 'Matematicas', 'Academicos'),
+(195, 100194, 10194, '2022-03-30 14:20:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(196, 100195, 10195, '2022-06-19 16:57:00', 'Salon', 'Ingles', 'Otros'),
+(197, 100196, 10196, '2022-04-02 13:48:00', 'Salon', 'Artes', 'Otros'),
+(198, 100197, 10197, '2022-07-01 09:54:00', 'Unidad', 'Politica', 'Academicos'),
+(199, 100198, 10198, '2022-05-11 07:02:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
+(200, 100199, 10199, '2022-06-12 14:45:00', 'Salon', 'Matematicas', 'Academicos'),
+(201, 100200, 10200, '2022-03-15 11:12:00', 'Salon', 'Ingles', 'Academicos'),
+(202, 100201, 10201, '2022-01-04 16:26:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(203, 100202, 10202, '2022-06-03 12:21:00', 'Unidad', 'Tecnologia', 'Academicos'),
+(204, 100203, 10203, '2022-06-21 14:54:00', 'Rectoria', 'Español', 'Otros'),
+(205, 100204, 10204, '2022-06-11 07:37:00', 'Unidad', 'Filosofia', 'Otros'),
+(206, 100205, 10205, '2022-01-02 13:39:00', 'Salon', 'Sociales', 'Otros'),
+(207, 100206, 10206, '2022-07-21 10:26:00', 'Salon', 'Tecnologia', 'Academicos'),
+(208, 100207, 10207, '2022-02-04 10:54:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
+(209, 100208, 10208, '2022-04-08 16:28:00', 'Salon', 'Politica', 'Otros'),
+(210, 100209, 10209, '2022-05-31 10:40:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
+(211, 100210, 10210, '2022-03-01 13:07:00', 'Salon', 'Español', 'Otros'),
+(212, 100211, 10211, '2022-02-01 12:45:00', 'Unidad', 'Sociales', 'Otros'),
+(213, 100212, 10212, '2022-07-24 16:35:00', 'Salon', 'Sociales', 'Academicos'),
+(214, 100213, 10213, '2022-08-11 12:43:00', 'Salon', 'Fisica', 'Academicos'),
+(215, 100214, 10214, '2022-07-12 12:29:00', 'Salon', 'Tecnologia', 'Otros'),
+(216, 100215, 10215, '2022-05-17 16:52:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(217, 100216, 10216, '2022-05-02 15:19:00', 'Unidad', 'Sociales', 'Academicos'),
+(218, 100217, 10217, '2022-06-05 16:29:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(219, 100218, 10218, '2022-02-11 09:51:00', 'Rectoria', 'Fisica', 'Otros'),
+(220, 100219, 10219, '2022-03-11 13:04:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(221, 100220, 10220, '2022-03-31 12:46:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(222, 100221, 10221, '2022-07-07 13:38:00', 'Unidad', 'Sociales', 'Otros'),
+(223, 100222, 10222, '2022-08-16 16:17:00', 'Salon', 'Fisica', 'Otros'),
+(224, 100223, 10223, '2022-04-29 09:37:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(225, 100224, 10224, '2022-02-25 16:55:00', 'Unidad', 'Ingles', 'Academicos'),
+(226, 100225, 10225, '2022-04-21 09:22:00', 'Rectoria', 'Politica', 'Otros'),
+(227, 100226, 10226, '2022-03-01 08:12:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(228, 100227, 10227, '2022-07-04 14:24:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
+(229, 100228, 10228, '2022-05-30 09:28:00', 'Salon', 'Politica', 'Otros'),
+(230, 100229, 10229, '2022-06-25 14:07:00', 'Rectoria', 'Sociales', 'Otros'),
+(231, 100230, 10230, '2022-06-18 14:53:00', 'Unidad', 'Artes', 'Academicos'),
+(232, 100231, 10231, '2022-06-28 10:42:00', 'Unidad', 'Español', 'Otros'),
+(233, 100232, 10232, '2022-06-13 16:09:00', 'Salon', 'Artes', 'Academicos'),
+(234, 100233, 10233, '2022-04-16 16:15:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
+(235, 100234, 10234, '2022-05-26 15:27:00', 'Rectoria', 'Filosofia', 'Otros'),
+(236, 100235, 10235, '2022-07-16 15:17:00', 'Rectoria', 'Ingles', 'Academicos'),
+(237, 100236, 10236, '2022-06-20 10:54:00', 'Salon', 'Politica', 'Otros'),
+(238, 100237, 10237, '2022-02-28 15:51:00', 'Salon', 'Ingles', 'Academicos'),
+(239, 100238, 10238, '2022-03-10 15:34:00', 'Salon', 'Español', 'Otros'),
+(240, 100239, 10239, '2022-06-01 15:35:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
+(241, 100240, 10240, '2022-06-03 07:11:00', 'Salon', 'Politica', 'Academicos'),
+(242, 100241, 10241, '2022-05-26 12:56:00', 'Unidad', 'Politica', 'Academicos'),
+(243, 100242, 10242, '2022-01-18 12:42:00', 'Salon', 'Tecnologia', 'Otros'),
+(244, 100243, 10243, '2022-07-17 14:15:00', 'Rectoria', 'Quimica', 'Academicos'),
+(245, 100244, 10244, '2022-06-07 11:17:00', 'Unidad', 'Quimica', 'Academicos'),
+(246, 100245, 10245, '2022-07-06 16:04:00', 'Unidad', 'Filosofia', 'Academicos'),
+(247, 100246, 10246, '2022-04-07 16:20:00', 'Unidad', 'Matematicas', 'Otros'),
+(248, 100247, 10247, '2022-03-16 10:49:00', 'Unidad', 'Español', 'Academicos'),
+(249, 100248, 10248, '2022-07-30 12:05:00', 'Salon', 'Artes', 'Otros'),
+(250, 100249, 10249, '2022-05-24 13:02:00', 'Unidad', 'Ingles', 'Otros'),
+(251, 100250, 10250, '2022-05-03 12:55:00', 'Unidad', 'Filosofia', 'Academicos'),
+(252, 100251, 10251, '2022-01-02 07:58:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(253, 100252, 10252, '2022-07-22 15:36:00', 'Rectoria', 'Artes', 'Otros'),
+(254, 100253, 10253, '2022-08-24 10:50:00', 'Rectoria', 'Fisica', 'Academicos'),
+(255, 100254, 10254, '2022-04-10 15:23:00', 'Salon', 'Filosofia', 'Academicos'),
+(256, 100255, 10255, '2022-02-25 13:01:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(257, 100256, 10256, '2022-06-05 14:45:00', 'Rectoria', 'Politica', 'Otros'),
+(258, 100257, 10257, '2022-07-18 15:21:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
+(259, 100258, 10258, '2022-03-22 10:08:00', 'Rectoria', 'Matematicas', 'Otros'),
+(260, 100259, 10259, '2022-07-15 09:37:00', 'Unidad', 'Ingles', 'Academicos'),
+(261, 100260, 10260, '2022-03-11 11:37:00', 'Rectoria', 'Matematicas', 'Otros'),
+(262, 100261, 10261, '2022-01-01 07:38:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
+(263, 100262, 10262, '2022-01-30 10:55:00', 'Sala de Profesores', 'Fisica', 'Academicos'),
+(264, 100263, 10263, '2022-08-13 14:44:00', 'Unidad', 'Español', 'Otros'),
+(265, 100264, 10264, '2022-07-12 15:53:00', 'Rectoria', 'Artes', 'Academicos'),
+(266, 100265, 10265, '2022-04-08 10:43:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(267, 100266, 10266, '2022-07-05 15:15:00', 'Sala de Profesores', 'Fisica', 'Otros'),
+(268, 100267, 10267, '2022-07-31 14:54:00', 'Sala de Profesores', 'Español', 'Otros'),
+(269, 100268, 10268, '2022-03-05 16:30:00', 'Unidad', 'Tecnologia', 'Otros'),
+(270, 100269, 10269, '2022-05-04 11:57:00', 'Rectoria', 'Artes', 'Academicos'),
+(271, 100270, 10270, '2022-01-12 15:25:00', 'Rectoria', 'Tecnologia', 'Academicos'),
+(272, 100271, 10271, '2022-02-18 16:48:00', 'Salon', 'Filosofia', 'Academicos'),
+(273, 100272, 10272, '2022-04-13 14:27:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
+(274, 100273, 10273, '2022-06-03 07:20:00', 'Rectoria', 'Fisica', 'Academicos'),
+(275, 100274, 10274, '2022-01-30 08:56:00', 'Unidad', 'Fisica', 'Academicos'),
+(276, 100275, 10275, '2022-04-21 15:20:00', 'Sala de Profesores', 'Español', 'Academicos'),
+(277, 100276, 10276, '2022-01-26 11:52:00', 'Unidad', 'Artes', 'Otros'),
+(278, 100277, 10277, '2022-05-01 13:59:00', 'Rectoria', 'Español', 'Otros'),
+(279, 100278, 10278, '2022-06-15 07:19:00', 'Rectoria', 'Fisica', 'Otros'),
+(280, 100279, 10279, '2022-04-09 12:41:00', 'Salon', 'Artes', 'Otros'),
+(281, 100280, 10280, '2022-07-23 12:46:00', 'Unidad', 'Politica', 'Academicos'),
+(282, 100281, 10281, '2022-05-13 09:02:00', 'Rectoria', 'Quimica', 'Otros'),
+(283, 100282, 10282, '2022-04-08 11:10:00', 'Sala de Profesores', 'Español', 'Otros'),
+(284, 100283, 10283, '2022-04-22 11:41:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
+(285, 100284, 10284, '2022-04-06 10:05:00', 'Salon', 'Quimica', 'Academicos'),
+(286, 100285, 10285, '2022-02-14 13:29:00', 'Unidad', 'Filosofia', 'Academicos'),
+(287, 100286, 10286, '2022-01-26 16:14:00', 'Unidad', 'Quimica', 'Academicos'),
+(288, 100287, 10287, '2022-03-11 14:57:00', 'Unidad', 'Fisica', 'Academicos'),
+(289, 100288, 10288, '2022-06-01 12:39:00', 'Rectoria', 'Quimica', 'Otros'),
+(290, 100289, 10289, '2022-03-25 07:38:00', 'Unidad', 'Politica', 'Otros'),
+(291, 100290, 10290, '2022-06-23 11:47:00', 'Sala de Profesores', 'Fisica', 'Otros'),
+(292, 100291, 10291, '2022-08-16 08:50:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
+(293, 100292, 10292, '2022-08-10 09:08:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(294, 100293, 10293, '2022-05-13 07:50:00', 'Unidad', 'Español', 'Academicos'),
+(295, 100294, 10294, '2022-02-24 12:45:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(296, 100295, 10295, '2022-06-25 09:52:00', 'Rectoria', 'Sociales', 'Otros'),
+(297, 100296, 10296, '2022-01-21 07:56:00', 'Unidad', 'Artes', 'Academicos'),
+(298, 100297, 10297, '2022-02-22 15:30:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(299, 100298, 10298, '2022-04-25 09:22:00', 'Salon', 'Artes', 'Academicos'),
+(300, 100299, 10299, '2022-04-24 08:05:00', 'Rectoria', 'Filosofia', 'Academicos'),
+(301, 100300, 10300, '2022-02-28 12:22:00', 'Unidad', 'Ingles', 'Otros'),
+(302, 100301, 10301, '2022-03-20 14:31:00', 'Sala de Profesores', 'Quimica', 'Otros'),
+(303, 100302, 10302, '2022-08-17 13:48:00', 'Salon', 'Sociales', 'Otros'),
+(304, 100303, 10303, '2022-03-12 16:06:00', 'Rectoria', 'Sociales', 'Academicos'),
+(305, 100304, 10304, '2022-03-02 10:03:00', 'Salon', 'Tecnologia', 'Academicos'),
+(306, 100305, 10305, '2022-07-17 11:19:00', 'Salon', 'Edu.Fisica', 'Academicos'),
+(307, 100306, 10306, '2022-01-30 13:37:00', 'Rectoria', 'Quimica', 'Academicos'),
+(308, 100307, 10307, '2022-03-08 11:45:00', 'Sala de Profesores', 'Fisica', 'Academicos'),
+(309, 100308, 10308, '2022-08-16 10:51:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
+(310, 100309, 10309, '2022-03-08 15:54:00', 'Salon', 'Fisica', 'Otros'),
+(311, 100310, 10310, '2022-02-22 15:21:00', 'Salon', 'Politica', 'Academicos'),
+(312, 100311, 10311, '2022-07-14 16:14:00', 'Salon', 'Tecnologia', 'Otros'),
+(313, 100312, 10312, '2022-03-26 16:24:00', 'Rectoria', 'Español', 'Academicos'),
+(314, 100313, 10313, '2022-07-29 15:22:00', 'Rectoria', 'Politica', 'Academicos'),
+(315, 100314, 10314, '2022-08-24 12:51:00', 'Unidad', 'Ingles', 'Academicos'),
+(316, 100315, 10315, '2022-01-07 08:12:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
+(317, 100316, 10316, '2022-04-28 10:52:00', 'Unidad', 'Filosofia', 'Academicos'),
+(318, 100317, 10317, '2022-03-26 10:05:00', 'Sala de Profesores', 'Ingles', 'Otros'),
+(319, 100318, 10318, '2022-03-12 12:42:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(320, 100319, 10319, '2022-05-31 16:19:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
+(321, 100320, 10320, '2022-03-23 10:41:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
+(322, 100321, 10321, '2022-06-30 16:13:00', 'Sala de Profesores', 'Español', 'Otros'),
+(323, 100322, 10322, '2022-08-12 11:59:00', 'Unidad', 'Sociales', 'Otros'),
+(324, 100323, 10323, '2022-02-19 14:03:00', 'Sala de Profesores', 'Ingles', 'Otros'),
+(325, 100324, 10324, '2022-07-11 16:01:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(326, 100325, 10325, '2022-05-01 07:34:00', 'Unidad', 'Politica', 'Otros'),
+(327, 100326, 10326, '2022-06-25 11:14:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
+(328, 100327, 10327, '2022-01-11 09:28:00', 'Unidad', 'Matematicas', 'Academicos'),
+(329, 100328, 10328, '2022-08-16 15:57:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
+(330, 100329, 10329, '2022-06-11 15:59:00', 'Rectoria', 'Sociales', 'Academicos'),
+(331, 100330, 10330, '2022-06-01 13:55:00', 'Salon', 'Fisica', 'Otros'),
+(332, 100331, 10331, '2022-02-10 15:25:00', 'Rectoria', 'Filosofia', 'Academicos'),
+(333, 100332, 10332, '2022-07-22 15:29:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(334, 100333, 10333, '2022-08-07 09:16:00', 'Salon', 'Tecnologia', 'Academicos'),
+(335, 100334, 10334, '2022-03-10 11:26:00', 'Salon', 'Español', 'Otros'),
+(336, 100335, 10335, '2022-01-27 15:03:00', 'Rectoria', 'Politica', 'Academicos'),
+(337, 100336, 10336, '2022-02-07 12:38:00', 'Unidad', 'Tecnologia', 'Academicos'),
+(338, 100337, 10337, '2022-08-11 07:06:00', 'Salon', 'Matematicas', 'Otros'),
+(339, 100338, 10338, '2022-08-24 09:05:00', 'Sala de Profesores', 'Filosofia', 'Academicos'),
+(340, 100339, 10339, '2022-05-04 15:32:00', 'Unidad', 'Matematicas', 'Otros'),
+(341, 100340, 10340, '2022-06-08 08:00:00', 'Unidad', 'Quimica', 'Academicos'),
+(342, 100341, 10341, '2022-01-19 09:25:00', 'Unidad', 'Ingles', 'Academicos'),
+(343, 100342, 10342, '2022-04-28 08:28:00', 'Rectoria', 'Filosofia', 'Otros'),
+(344, 100343, 10343, '2022-07-10 10:04:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
+(345, 100344, 10344, '2022-06-19 08:03:00', 'Rectoria', 'Sociales', 'Otros'),
+(346, 100345, 10345, '2022-03-27 07:38:00', 'Salon', 'Tecnologia', 'Academicos'),
+(347, 100346, 10346, '2022-02-16 13:52:00', 'Salon', 'Edu.Fisica', 'Academicos'),
+(348, 100347, 10347, '2022-04-09 15:03:00', 'Unidad', 'Tecnologia', 'Academicos'),
+(349, 100348, 10348, '2022-06-15 09:03:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
+(350, 100349, 10349, '2022-03-24 14:27:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(351, 100350, 10350, '2022-03-31 11:46:00', 'Unidad', 'Filosofia', 'Academicos'),
+(352, 100351, 10351, '2022-08-03 07:57:00', 'Sala de Profesores', 'Ingles', 'Otros'),
+(353, 100352, 10352, '2022-02-19 12:28:00', 'Rectoria', 'Politica', 'Otros'),
+(354, 100353, 10353, '2022-03-26 15:38:00', 'Unidad', 'Filosofia', 'Otros'),
+(355, 100354, 10354, '2022-01-06 10:00:00', 'Salon', 'Quimica', 'Otros'),
+(356, 100355, 10355, '2022-06-25 09:09:00', 'Rectoria', 'Fisica', 'Otros'),
+(357, 100356, 10356, '2022-03-18 13:45:00', 'Salon', 'Español', 'Academicos'),
+(358, 100357, 10357, '2022-03-22 12:11:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
+(359, 100358, 10358, '2022-03-28 13:01:00', 'Salon', 'Tecnologia', 'Otros'),
+(360, 100359, 10359, '2022-04-16 07:53:00', 'Rectoria', 'Quimica', 'Otros'),
+(361, 100360, 10360, '2022-08-04 15:21:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
+(362, 100361, 10361, '2022-01-22 15:30:00', 'Salon', 'Español', 'Academicos'),
+(363, 100362, 10362, '2022-01-18 07:53:00', 'Sala de Profesores', 'Matematicas', 'Otros'),
+(364, 100363, 10363, '2022-02-22 09:14:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
+(365, 100364, 10364, '2022-06-04 13:15:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(366, 100365, 10365, '2022-03-02 12:22:00', 'Sala de Profesores', 'Español', 'Otros'),
+(367, 100366, 10366, '2022-01-18 16:26:00', 'Rectoria', 'Politica', 'Academicos'),
+(368, 100367, 10367, '2022-01-03 14:15:00', 'Salon', 'Filosofia', 'Otros'),
+(369, 100368, 10368, '2022-03-07 11:32:00', 'Unidad', 'Español', 'Otros'),
+(370, 100369, 10369, '2022-07-25 07:01:00', 'Sala de Profesores', 'Español', 'Otros'),
+(371, 100370, 10370, '2022-05-25 15:24:00', 'Unidad', 'Artes', 'Otros'),
+(372, 100371, 10371, '2022-07-24 14:11:00', 'Salon', 'Politica', 'Otros'),
+(373, 100372, 10372, '2022-06-16 08:34:00', 'Sala de Profesores', 'Español', 'Otros'),
+(374, 100373, 10373, '2022-01-30 16:08:00', 'Unidad', 'Sociales', 'Otros'),
+(375, 100374, 10374, '2022-01-10 12:16:00', 'Salon', 'Español', 'Academicos'),
+(376, 100375, 10375, '2022-01-29 07:40:00', 'Salon', 'Artes', 'Academicos'),
+(377, 100376, 10376, '2022-03-12 07:19:00', 'Salon', 'Fisica', 'Academicos'),
+(378, 100377, 10377, '2022-01-29 14:35:00', 'Rectoria', 'Politica', 'Academicos'),
+(379, 100378, 10378, '2022-07-19 08:24:00', 'Unidad', 'Filosofia', 'Otros'),
+(380, 100379, 10379, '2022-03-03 09:43:00', 'Salon', 'Ingles', 'Otros'),
+(381, 100380, 10380, '2022-03-19 10:47:00', 'Sala de Profesores', 'Quimica', 'Academicos'),
+(382, 100381, 10381, '2022-01-30 11:37:00', 'Salon', 'Matematicas', 'Academicos'),
+(383, 100382, 10382, '2022-08-25 16:40:00', 'Rectoria', 'Ingles', 'Academicos'),
+(384, 100383, 10383, '2022-08-13 14:54:00', 'Rectoria', 'Edu.Fisica', 'Academicos'),
+(385, 100384, 10384, '2022-08-05 11:53:00', 'Rectoria', 'Politica', 'Academicos'),
+(386, 100385, 10385, '2022-07-24 13:56:00', 'Unidad', 'Artes', 'Otros'),
+(387, 100386, 10386, '2022-02-12 13:04:00', 'Rectoria', 'Quimica', 'Academicos'),
+(388, 100387, 10387, '2022-02-09 11:28:00', 'Unidad', 'Español', 'Otros'),
+(389, 100388, 10388, '2022-01-27 11:37:00', 'Rectoria', 'Quimica', 'Otros'),
+(390, 100389, 10389, '2022-02-02 07:43:00', 'Salon', 'Español', 'Otros'),
+(391, 100390, 10390, '2022-07-26 07:05:00', 'Rectoria', 'Sociales', 'Academicos'),
+(392, 100391, 10391, '2022-03-26 11:03:00', 'Unidad', 'Quimica', 'Otros'),
+(393, 100392, 10392, '2022-02-15 14:26:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
+(394, 100393, 10393, '2022-07-29 14:24:00', 'Rectoria', 'Ingles', 'Otros'),
+(395, 100394, 10394, '2022-03-25 12:53:00', 'Salon', 'Quimica', 'Otros'),
+(396, 100395, 10395, '2022-02-16 09:27:00', 'Unidad', 'Politica', 'Otros'),
+(397, 100396, 10396, '2022-02-19 16:04:00', 'Unidad', 'Fisica', 'Otros'),
+(398, 100397, 10397, '2022-02-05 09:08:00', 'Salon', 'Politica', 'Otros'),
+(399, 100398, 10398, '2022-03-05 12:39:00', 'Rectoria', 'Quimica', 'Otros'),
+(400, 100399, 10399, '2022-06-01 15:50:00', 'Unidad', 'Fisica', 'Academicos'),
+(401, 100400, 10400, '2022-07-14 13:47:00', 'Sala de Profesores', 'Edu.Fisica', 'Otros'),
+(402, 100401, 10401, '2022-03-08 09:59:00', 'Unidad', 'Quimica', 'Otros'),
+(403, 100402, 10402, '2022-06-05 13:14:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(404, 100403, 10403, '2022-05-11 10:49:00', 'Rectoria', 'Sociales', 'Otros'),
+(405, 100404, 10404, '2022-03-10 08:45:00', 'Rectoria', 'Ingles', 'Otros'),
+(406, 100405, 10405, '2022-03-29 11:23:00', 'Salon', 'Filosofia', 'Otros'),
+(407, 100406, 10406, '2022-08-08 12:35:00', 'Salon', 'Artes', 'Academicos'),
+(408, 100407, 10407, '2022-07-11 15:03:00', 'Unidad', 'Sociales', 'Otros'),
+(409, 100408, 10408, '2022-06-15 07:12:00', 'Rectoria', 'Matematicas', 'Otros'),
+(410, 100409, 10409, '2022-08-23 15:24:00', 'Unidad', 'Tecnologia', 'Otros'),
+(411, 100410, 10410, '2022-02-06 14:18:00', 'Unidad', 'Quimica', 'Academicos'),
+(412, 100411, 10411, '2022-07-29 13:03:00', 'Sala de Profesores', 'Edu.Fisica', 'Academicos'),
+(413, 100412, 10412, '2022-01-07 12:41:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
+(414, 100413, 10413, '2022-01-11 14:56:00', 'Unidad', 'Fisica', 'Otros'),
+(415, 100414, 10414, '2022-08-05 10:57:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(416, 100415, 10415, '2022-05-02 08:24:00', 'Salon', 'Fisica', 'Otros'),
+(417, 100416, 10416, '2022-04-20 07:46:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
+(418, 100417, 10417, '2022-05-31 07:03:00', 'Unidad', 'Filosofia', 'Otros'),
+(419, 100418, 10418, '2022-04-09 14:01:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(420, 100419, 10419, '2022-04-17 09:01:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(421, 100420, 10420, '2022-06-21 12:59:00', 'Rectoria', 'Sociales', 'Otros'),
+(422, 100421, 10421, '2022-06-06 13:05:00', 'Sala de Profesores', 'Artes', 'Otros'),
+(423, 100422, 10422, '2022-06-30 08:17:00', 'Sala de Profesores', 'Ingles', 'Otros'),
+(424, 100423, 10423, '2022-05-12 12:35:00', 'Rectoria', 'Artes', 'Otros'),
+(425, 100424, 10424, '2022-03-23 14:31:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
+(426, 100425, 10425, '2022-05-07 13:16:00', 'Unidad', 'Español', 'Academicos'),
+(427, 100426, 10426, '2022-08-11 07:09:00', 'Salon', 'Tecnologia', 'Otros'),
+(428, 100427, 10427, '2022-07-31 09:42:00', 'Salon', 'Filosofia', 'Otros'),
+(429, 100428, 10428, '2022-04-12 12:01:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(430, 100429, 10429, '2022-05-30 15:16:00', 'Rectoria', 'Politica', 'Academicos'),
+(431, 100430, 10430, '2022-04-11 13:31:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(432, 100431, 10431, '2022-04-28 07:02:00', 'Rectoria', 'Tecnologia', 'Academicos'),
+(433, 100432, 10432, '2022-02-18 09:35:00', 'Unidad', 'Quimica', 'Otros'),
+(434, 100433, 10433, '2022-01-03 15:33:00', 'Unidad', 'Ingles', 'Academicos'),
+(435, 100434, 10434, '2022-03-05 09:43:00', 'Rectoria', 'Politica', 'Academicos'),
+(436, 100435, 10435, '2022-02-01 07:30:00', 'Sala de Profesores', 'Ingles', 'Academicos'),
+(437, 100436, 10436, '2022-04-02 11:59:00', 'Unidad', 'Tecnologia', 'Otros'),
+(438, 100437, 10437, '2022-02-14 07:57:00', 'Sala de Profesores', 'Matematicas', 'Academicos'),
+(439, 100438, 10438, '2022-01-17 14:39:00', 'Rectoria', 'Sociales', 'Otros'),
+(440, 100439, 10439, '2022-03-23 15:00:00', 'Salon', 'Ingles', 'Otros'),
+(441, 100440, 10440, '2022-04-09 08:48:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(442, 100441, 10441, '2022-06-18 12:50:00', 'Rectoria', 'Quimica', 'Otros'),
+(443, 100442, 10442, '2022-01-02 13:36:00', 'Unidad', 'Quimica', 'Academicos'),
+(444, 100443, 10443, '2022-01-09 14:48:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(445, 100444, 10444, '2022-02-14 10:19:00', 'Sala de Profesores', 'Ingles', 'Otros'),
+(446, 100445, 10445, '2022-02-20 10:33:00', 'Unidad', 'Quimica', 'Academicos'),
+(447, 100446, 10446, '2022-06-05 07:50:00', 'Sala de Profesores', 'Tecnologia', 'Academicos'),
+(448, 100447, 10447, '2022-02-27 15:18:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(449, 100448, 10448, '2022-06-20 15:42:00', 'Sala de Profesores', 'Fisica', 'Otros'),
+(450, 100449, 10449, '2022-08-19 10:00:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(451, 100450, 10450, '2022-07-10 16:41:00', 'Unidad', 'Ingles', 'Academicos'),
+(452, 100451, 10451, '2022-05-05 10:45:00', 'Salon', 'Politica', 'Academicos'),
+(453, 100452, 10452, '2022-02-16 14:59:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(454, 100453, 10453, '2022-07-21 16:51:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(455, 100454, 10454, '2022-08-13 13:09:00', 'Rectoria', 'Ingles', 'Academicos'),
+(456, 100455, 10455, '2022-01-02 12:07:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(457, 100456, 10456, '2022-03-17 15:27:00', 'Sala de Profesores', 'Fisica', 'Otros'),
+(458, 100457, 10457, '2022-06-01 12:22:00', 'Rectoria', 'Tecnologia', 'Academicos'),
+(459, 100458, 10458, '2022-03-13 09:32:00', 'Unidad', 'Sociales', 'Academicos'),
+(460, 100459, 10459, '2022-06-25 16:00:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(461, 100460, 10460, '2022-06-19 15:51:00', 'Unidad', 'Quimica', 'Academicos'),
+(462, 100461, 10461, '2022-06-04 07:36:00', 'Rectoria', 'Matematicas', 'Academicos'),
+(463, 100462, 10462, '2022-05-13 08:37:00', 'Salon', 'Sociales', 'Otros'),
+(464, 100463, 10463, '2022-01-30 09:55:00', 'Rectoria', 'Matematicas', 'Academicos'),
+(465, 100464, 10464, '2022-01-12 16:54:00', 'Rectoria', 'Edu.Fisica', 'Otros'),
+(466, 100465, 10465, '2022-07-19 14:27:00', 'Rectoria', 'Español', 'Academicos'),
+(467, 100466, 10466, '2022-02-01 10:20:00', 'Unidad', 'Español', 'Academicos'),
+(468, 100467, 10467, '2022-05-27 07:55:00', 'Salon', 'Filosofia', 'Academicos'),
+(469, 100468, 10468, '2022-03-05 08:48:00', 'Salon', 'Edu.Fisica', 'Academicos'),
+(470, 100469, 10469, '2022-04-23 13:30:00', 'Sala de Profesores', 'Politica', 'Academicos'),
+(471, 100470, 10470, '2022-05-17 09:05:00', 'Unidad', 'Sociales', 'Otros'),
+(472, 100471, 10471, '2022-08-25 10:04:00', 'Rectoria', 'Artes', 'Otros'),
+(473, 100472, 10472, '2022-08-09 12:11:00', 'Rectoria', 'Tecnologia', 'Otros'),
+(474, 100473, 10473, '2022-01-11 16:38:00', 'Rectoria', 'Fisica', 'Academicos'),
+(475, 100474, 10474, '2022-07-22 08:53:00', 'Sala de Profesores', 'Sociales', 'Otros'),
+(476, 100475, 10475, '2022-05-27 08:22:00', 'Salon', 'Filosofia', 'Academicos'),
+(477, 100476, 10476, '2022-08-20 15:12:00', 'Salon', 'Quimica', 'Otros'),
+(478, 100477, 10477, '2022-03-22 14:41:00', 'Unidad', 'Fisica', 'Academicos'),
+(479, 100478, 10478, '2022-02-27 10:34:00', 'Sala de Profesores', 'Fisica', 'Otros'),
+(480, 100479, 10479, '2022-02-06 08:08:00', 'Salon', 'Fisica', 'Academicos'),
+(481, 100480, 10480, '2022-01-06 14:58:00', 'Rectoria', 'Artes', 'Academicos'),
+(482, 100481, 10481, '2022-08-11 12:46:00', 'Sala de Profesores', 'Tecnologia', 'Otros'),
+(483, 100482, 10482, '2022-07-12 08:12:00', 'Unidad', 'Edu.Fisica', 'Academicos'),
+(484, 100483, 10483, '2022-02-27 11:24:00', 'Rectoria', 'Sociales', 'Otros'),
+(485, 100484, 10484, '2022-07-04 15:12:00', 'Salon', 'Quimica', 'Academicos'),
+(486, 100485, 10485, '2022-04-15 07:26:00', 'Sala de Profesores', 'Español', 'Otros'),
+(487, 100486, 10486, '2022-03-12 10:52:00', 'Unidad', 'Ingles', 'Academicos'),
+(488, 100487, 10487, '2022-06-28 08:43:00', 'Rectoria', 'Quimica', 'Academicos'),
+(489, 100488, 10488, '2022-03-23 13:09:00', 'Sala de Profesores', 'Artes', 'Academicos'),
+(490, 100489, 10489, '2022-03-11 11:11:00', 'Unidad', 'Edu.Fisica', 'Otros'),
+(491, 100490, 10490, '2022-02-23 07:54:00', 'Rectoria', 'Español', 'Academicos'),
+(492, 100491, 10491, '2022-05-09 09:03:00', 'Rectoria', 'Fisica', 'Academicos'),
+(493, 100492, 10492, '2022-06-02 07:41:00', 'Sala de Profesores', 'Politica', 'Otros'),
+(494, 100493, 10493, '2022-02-16 11:11:00', 'Rectoria', 'Filosofia', 'Academicos'),
+(495, 100494, 10494, '2022-06-20 11:04:00', 'Rectoria', 'Ingles', 'Academicos'),
+(496, 100495, 10495, '2022-02-11 14:18:00', 'Sala de Profesores', 'Filosofia', 'Otros'),
+(497, 100496, 10496, '2022-04-05 08:39:00', 'Rectoria', 'Español', 'Otros'),
+(498, 100497, 10497, '2022-04-17 07:01:00', 'Salon', 'Artes', 'Academicos'),
+(499, 100498, 10498, '2022-04-20 12:22:00', 'Sala de Profesores', 'Sociales', 'Academicos'),
+(500, 100499, 10499, '2022-01-07 09:23:00', 'Rectoria', 'Español', 'Otros');
 
---
--- Estructura para la vista `direccionestudiantes`
---
-DROP TABLE IF EXISTS `direccionestudiantes`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `direccionestudiantes`  AS SELECT `e`.`idestudiantes` AS `idestudiantes`, `c`.`lugar` AS `lugar` FROM (`estudiantes` `e` join `citas` `c`) WHERE `c`.`idEstudiante` = `e`.`idestudiantes``idestudiantes`  ;
 
--- --------------------------------------------------------
-
---
--- Estructura para la vista `estudiante`
---
-DROP TABLE IF EXISTS `estudiante`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estudiante`  AS SELECT `e`.`idestudiantes` AS `idestudiantes`, `e`.`apellidos` AS `apellidos`, `e`.`nombres` AS `nombres`, `e`.`grado` AS `grado`, `e`.`seccion` AS `seccion` FROM `estudiantes` AS `e` WHERE `e`.`idestudiantes` like '1%''1%'  ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `estudiantesdeonce`
---
-DROP TABLE IF EXISTS `estudiantesdeonce`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estudiantesdeonce`  AS SELECT `e`.`apellidos` AS `apellidos`, `e`.`nombres` AS `nombres`, `e`.`idestudiantes` AS `idestudiantes` FROM `estudiantes` AS `e` WHERE `e`.`grado` like '11''11'  ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `login`
---
-DROP TABLE IF EXISTS `login`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `login`  AS SELECT `estudiantes`.`nombres` AS `nombres`, `estudiantes`.`apellidos` AS `apellidos`, `estudiantes`.`idestudiantes` AS `idestudiantes` FROM `estudiantes``estudiantes`  ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `permisoestudiante`
---
-DROP TABLE IF EXISTS `permisoestudiante`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `permisoestudiante`  AS SELECT `e`.`nombres` AS `nombres`, `e`.`apellidos` AS `apellidos`, `e`.`grado` AS `grado`, `c`.`motivo` AS `motivo`, `e`.`idestudiantes` AS `idestudiantes` FROM (`estudiantes` `e` join `citas` `c`) WHERE `e`.`idestudiantes` = `c`.`idEstudiante` AND `e`.`nombres` like 'm%''m%'  ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `problemamatematicaestudiante`
---
-DROP TABLE IF EXISTS `problemamatematicaestudiante`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `problemamatematicaestudiante`  AS SELECT `e`.`apellidos` AS `apellidos`, `e`.`nombres` AS `nombres`, `e`.`idestudiantes` AS `idestudiantes`, `c`.`asignatura` AS `asignatura` FROM (`estudiantes` `e` join `citas` `c`) WHERE `e`.`idestudiantes` = `c`.`idEstudiante` AND `c`.`asignatura` like 'Matematicas''Matematicas'  ;
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `citas`
---
-ALTER TABLE `citas`
-  ADD PRIMARY KEY (`idCitas`),
-  ADD KEY `idProfesor` (`idProfesor`),
-  ADD KEY `idEstudiante` (`idEstudiante`);
-
---
--- Indices de la tabla `estudiantes`
---
-ALTER TABLE `estudiantes`
-  ADD PRIMARY KEY (`idestudiantes`);
-
---
--- Indices de la tabla `profesores`
---
-ALTER TABLE `profesores`
-  ADD PRIMARY KEY (`idProfesor`);
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `citas`
---
-ALTER TABLE `citas`
-  ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`idProfesor`) REFERENCES `profesores` (`idProfesor`),
-  ADD CONSTRAINT `idEstudiante` FOREIGN KEY (`idEstudiante`) REFERENCES `estudiantes` (`idestudiantes`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
-
+INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (170511, "Herrera", "Juanky", 11, 7);
+INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (160063, "Santana", "Daniel", 11, 7);
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

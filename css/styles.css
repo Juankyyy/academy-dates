@@ -11591,13 +11591,16 @@ footer.footer .social-link:hover {
 
 /*ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ*/
 
-
+.body-mio {
+  background:#475d62  url(https://i.postimg.cc/vBchh4Wx/fondito3.jpg);
+  background-size:cover;
+}
 
 .login-dark {
   height: 658px;
-  background:#475d62  url(/Fondos/fondito3.jpg);
   background-size:cover;
   position:relative;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 
