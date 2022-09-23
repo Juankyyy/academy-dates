@@ -11597,10 +11597,10 @@ footer.footer .social-link:hover {
 }
 
 .login-dark {
-  height: 658px;
+  height: 100%;
   background-size:cover;
   position:relative;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 

@@ -2915,6 +2915,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #ff6e42;
   border-color: #ff6e42;
+  box-shadow: 0px 0px 0.5rem #ff6e42;
 }
 
 .btn-primary:hover {
@@ -11354,6 +11355,7 @@ textarea.form-control {
 
 .navbar .navbar-brand img {
   width: 60px;
+  box-shadow: 0px 0px 0.3rem white;
 }
 
 .navbar .nav-link {
