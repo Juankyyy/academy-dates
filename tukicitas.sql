@@ -638,7 +638,7 @@ INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `se
 (10581, 'Juneja', 'Alexis', 11, 24),
 (10582, 'Stille', 'Alfonso', 8, 17),
 (10583, 'Papastamatiou', 'Alonso', 8, 22);
-
+  
 
 
 
@@ -2155,6 +2155,14 @@ INSERT INTO `citas` (`idCitas`, `idProfesor`, `idEstudiante`, `fechahoraCita`, `
 
 INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (170511, "Herrera", "Juanky", 11, 7);
 INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (160063, "Santana", "Daniel", 11, 7);
+INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (170149, "Florez", "Valeria", 11, 7);
+INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (190497, "Rivas", "Andre", 11, 7);
+INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (160152, "Betancur", "Manuela", 11, 7);
+INSERT INTO `estudiantes` (`idestudiantes`, `apellidos`, `nombres`, `grado`, `seccion`) VALUES (170813, "Monsalve", "Sebastian", 11, 7);
+
+-- INSERT INTO `citas` (`idCitas`, `idProfesor`, `idEstudiante`, `fechahoraCita`, `lugar`, `asignatura`, `motivo`) VALUES
+-- (2, 100001, 10001, '2022-08-25 09:13:00', 'Unidad', 'Fisica', 'Otros'),
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
