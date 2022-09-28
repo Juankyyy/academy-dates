@@ -161,7 +161,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="media align-items-center mb-3">
-                                <img class="mr-3" src="cosas/salve.jpg" alt="">
+                                <img class="mr-3" src="cosas/integrantes/Salve.jpg" alt="">
                                 <div class="media-body">
                                     <h6 class="mt-1 mb-0">Sebastian Monsalve Ramos</h6>
                                     <small class="text-muted mb-0">Back End - Líder</small>     
@@ -189,7 +189,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="media align-items-center mb-3">
-                                <img class="mr-3" src="cosas/andre.jpg" alt="">
+                                <img class="mr-3" src="cosas/integrantes/Andre.jpg" alt="">
                                 <div class="media-body">
                                     <h6 class="mt-1 mb-0">Andre Rivas García</h6>
                                     <small class="text-muted mb-0">Back End</small>        
@@ -219,7 +219,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="media align-items-center mb-3">
-                                <img class="mr-3" src="cosas/manu.jpg" alt="">
+                                <img class="mr-3" src="cosas/integrantes/Manu.jpg" alt="">
                                 <div class="media-body">
                                     <h6 class="mt-1 mb-0">Manuela Betancur Miranda</h6>
                                     <small class="text-muted mb-0">Logística</small>        
