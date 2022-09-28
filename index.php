@@ -78,7 +78,7 @@
             <?php
                 if(isset($_SESSION['nombre'])) {
                     echo "<h1 class='subtitle'>
-                            ¡Bienvenido, " . $_SESSION['nombre'] . "!
+                            ¡Bienvenido/a, " . $_SESSION['nombre'] . "!
                         </h1>";
                 }
             ?>  
