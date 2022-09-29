@@ -1,12 +1,12 @@
 <?php 
 	session_start();
 	include_once './conn.php';
-	$nombre = $_POST['nombre'];
-	$apellido = $_POST['apellido'];
+	$correo = $_POST['correo'];
+	$contra = $_POST['password'];
 	$idE = $_POST['idestudiante'];
 	$sentencia = $bd->prepare('select * from estudiantes where 
-								nombres = ? and apellidos = ? and idestudiantes = ?;');
-	$sentencia->execute([$nombre, $apellido, $idE]);
+								correo = ? and contraseña = ? and idestudiantes = ?;');
+	$sentencia->execute([$correo, $contra, $idE]);
 	$datos = $sentencia->fetch(PDO::FETCH_OBJ);
 	//print_r($datos);
 

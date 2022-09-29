@@ -36,14 +36,20 @@
 
 
     <div class="login-dark" >
-        <form method="post" id="zpage">
+        <form method="post" id="zpage" action="owo.php">
             <h2 class="sr-only" >Login Form</h2>
             <div class="illustration"><img class="img-fluid27" src="cosas/iniciar.png"></div>
-            <div class="form-group"><input class="form-control" id="sapo" type="number" name="idestudiante" placeholder="Código Estudiantil" textcolor autofocus></div>
-            <div class="form-group"><input class="form-control" type="text" name="names" placeholder="Nombre y Apellidos"></div>
-            <div class="form-group"><input class="form-control" type="email" name="correo" placeholder="example@inemjose.edu.co"></div>
-            <div class="form-group"><input class="form-control" type="password" name="contraseña" placeholder="Contraseña"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block"  type="button" >Iniciar sesión</button></div>
+            <div class="form-group"><input class="form-control" id="sapo" type="number" name="idestudiante" placeholder="Código Estudiantil" required textcolor autofocus></div>
+            <div class="form-group"><input required class="form-control" type="text" name="nombres" placeholder="Nombres"></div>
+            <div class="form-group"><input required class="form-control" type="text" name="apellidos" placeholder="Apellidos"></div>
+            <div class="form-group"><input required class="form-control" type="email" name="correo" placeholder="example@inemjose.edu.co"></div>
+            <div class="form-group"><input required class="form-control" type="password" name="contraseña" placeholder="Contraseña">
+                <div class="form-group"><input required class="form-control" type="number" name="grado" placeholder="Grado" textcolor autofocus></div>
+                <div class="form-group"><input required class="form-control" type="number" name="seccion" placeholder="Sección" textcolor autofocus></div>
+                <input type="hidden" name="oculto" value="1">
+            </div>
+            
+            <div class="form-group"><button class="btn btn-primary btn-block"  type="submit" >Registrarse</button></div>
         </form>
     </div>
 
