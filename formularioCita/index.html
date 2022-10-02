@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Agenda Tu Cita</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+	</script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- Custom Theme files -->
+	<link href="css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="assets2/css/leadmark.css">
+	<!--fonts-->
+	<!-- <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<!--//fonts-->
+</head>
+
+<body>
+	<div class="navbar custom-navbar navbar-expand-md" id="navsito">
+		<div class="container">
+			<a class="navbar-brand" href="../index.php">
+				<img src="../cosas/logo.png">
+			</a>
+		</div>
+		
+		<div>
+			<a href="../index.php" class="ml-4 nav-link btn btn-primary btn-sm rounded">Volver</a>
+		</div>
+	</div>
+	
+	<!--background-->
+	<!-- <h1>Agendar cita </h1> -->
+	<div class="bg-agile">
+		<div class="book-appointment">
+			<h2>Agenda tu Cita</h2>
+			
+			<form action="#" method="post" name="formulario" id="formulario">
+				<div id="resultados_ajax" class="gaps"></div>
+				<div class="left-agileits-w3layouts same">
+					<div class="gaps">
+						<p>Nombres</p>
+						<input type="text" name="nombres" placeholder="" required autofocus maxlength="20" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+					</div>
+
+					<div class="gaps">
+						<p>Apellidos</p>
+						<input type="text" name="apellidos" placeholder="" required maxlength="25" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+					</div>
+
+					<div class="gaps">
+						<p>Código Estudiante</p>
+						<input type="email" name="correo" placeholder="" required maxlength="40" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+					</div>
+
+					<div class="gaps">
+						<p>Grado</p>
+						<select class="form-control" name="grado" required>
+							<option></option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+						</select>
+					</div>
+
+					<div class="gaps">
+						<p>Sección</p>
+						<input type="number" name="seccion" placeholder="" required maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+					</div>
+					
+				</div>
+
+				<div class="right-agileinfo same">
+					<div class="gaps">
+						<p>Correo</p>
+						<input type="email" name="correo" placeholder="" required maxlength="40" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+					</div>
+
+					<div class="gaps">
+						<p>Fecha</p>
+						<input id="datepicker1" name="fechahoraCita" type="text" value="" onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = '';}" required autocomplete="off">
+					</div>
+
+					<div class="gaps">
+						<p>Hora</p>
+						<input type="text" id="timepicker" name="time" class="timepicker form-control" value="" autocomplete="off" required>
+					</div>
+
+					<div class="gaps">
+						<p>Asignatura</p>
+						<select class="form-control" name="asignatura" required>
+							<option></option>
+							<option value="Sociales">Sociales</option>
+							<option value="Artes">Artes</option>
+							<option value="Tecnologia">Tecnología</option>
+							<option value="Politica">Política</option>
+							<option value="Filosofia">Filosofía</option>
+							<option value="Quimica">Química</option>
+							<option value="Matematicas">Matemáticas</option>
+							<option value="Edu.Fisica">Edu.Física</option>
+							<option value="Ingles">Inglés</option>
+							<option value="Español">Español</option>
+							<option value="Fisica">Física</option>
+							<option value="Emprendimiento">Emprendimiento</option>
+							<option value="Religion">Religión</option>
+							<option value="Etica">Ética</option>
+						</select>
+					</div>
+					
+					<div class="gaps">
+						<p>Motivo</p>
+						<textarea name="motivo" placeholder="" required></textarea>
+					</div>
+				</div>
+
+				<div class="clear"></div>
+				<input type="submit" value="Realizar cita">
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/wickedpicker.js"></script>
+	<script type="text/javascript">
+		$('.timepicker').wickedpicker({ twentyFour: false });
+	</script>
+
+	<!-- Calendar -->
+
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+
+	<!-- //Calendar -->
+	
+	<script>
+		$("#appointment").submit(function (event) {
+			var parametros = $(this).serialize();
+			$.ajax({
+				type: "POST",
+				url: "enviar-mail.php",
+				data: parametros,
+				beforeSend: function (objeto) {
+					$("#resultados_ajax").html("Enviando...");
+				},
+				success: function (datos) {
+					$("#resultados_ajax").html(datos);
+				}
+			});
+			event.preventDefault();
+		});
+	</script>
+
+</body>
+</html>

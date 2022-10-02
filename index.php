@@ -38,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#mapa">Mapa</a>
                     </li>
+                    <li class='nav-item'>
+                        <a href='./formularioCita/index.html' class='ml-4 nav-link btn btn-primary btn-sm rounded'>Agendar Cita</a>
+                    </li>
                     <?php
                         if (!isset($_SESSION['nombre'])) {
                             echo "<li class='nav-item'>
