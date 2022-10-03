@@ -11,6 +11,7 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Academy Dates</title>
+    <link rel="shortcut icon" href="./cosas/Logo/ADfavi1.ico" type="image/x-icon">
     <!-- font icons -->
     <link rel="stylesheet" href="assets2/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + LeadMark main styles -->

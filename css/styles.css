@@ -600,7 +600,7 @@ progress {
 }
 
 .img-fluid27 {
-  max-width: 60%;
+  max-width: 50%;
   max-height: auto;
   justify-content: center;
 }
@@ -3038,9 +3038,10 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #1D809F;
+  background-color: #000000;
   border-color: #1D809F;
 }
+
 .btn-primary:hover {
   color: #fff;
   background-color: #196d87;
@@ -11608,7 +11609,7 @@ footer.footer .social-link:hover {
   max-width:320px;
   width:90%;
   backdrop-filter: blur(15px);
-  padding:40px;
+  padding:0px 40px;
   border-radius:4px;
   transform:translate(-50%, -50%);
   position:absolute;
@@ -11620,7 +11621,7 @@ footer.footer .social-link:hover {
 
 .login-dark .illustration {
   text-align:center;
-  padding:15px 0 20px;
+  padding: 0px 0 20px;
   font-size:100px;
   color:#2980ef;
 }
@@ -11636,26 +11637,25 @@ footer.footer .social-link:hover {
 }
 
 .login-dark form .btn-primary {
-  background:#214a80;
-  border:none;
+  background: #ff6e42;
+  box-shadow: 0px 0px 0.5rem #ff6e42 !important;
+  line-height: 1.5;
   border-radius:4px;
   padding:11px;
-  box-shadow:none;
   margin-top:26px;
-  text-shadow:none;
-  outline:none;
+  transition: background 0.5s, border-color 0.5s;
 }
 
 .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
-  background:#214a80;
-  outline:none;
+  background: #ff511c;
+  border-color: #ff470f;
+  /* box-shadow: 0px 0px 0.5rem #3498db !important; */
 }
 .login-dark form .forgot {
   display:block;
   text-align:center;
   font-size:12px;
-  color:#6f7a85;
-  opacity:0.9;
+  color: #6f7a85;
   text-decoration:none;
 }
 
@@ -11670,7 +11670,7 @@ footer.footer .social-link:hover {
 }
 
 .form-control::placeholder{
-  text-shadow: 1px 1px white;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 

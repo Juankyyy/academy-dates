@@ -239,6 +239,7 @@ a {
 	background-color: #ff6e42;
 	border-color: #ff6e42;
 	box-shadow: 0px 0px 0.5rem #ff6e42;
+	transition: background 0.5s, border-color 0.5s;
 }
 
 .btn-primary:hover {
@@ -360,7 +361,7 @@ input[type=submit] {
 	margin: 0 auto;
 	margin-top: 2em;
 	padding: 9px 30px;
-	font-size: 1.04em;
+	/* font-size: 1.04em; */
 	cursor: pointer;
 	border: 0;
 	outline: none;
@@ -375,7 +376,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-	background: #3498db;
+	background: #ff511c;
 	/* text-shadow: 0px 0px 0.1rem black; */
 	transition: 0.4s all ease;
 	-webkit-transition: 0.4s all ease;
