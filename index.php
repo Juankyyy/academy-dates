@@ -226,7 +226,7 @@
                                 <img class="mr-3" src="cosas/integrantes/Manu.jpg" alt="">
                                 <div class="media-body">
                                     <h6 class="mt-1 mb-0">Manuela Betancur Miranda</h6>
-                                    <small class="text-muted mb-0">Logística</small>        
+                                    <small class="text-muted mb-0">Front End</small>        
                                 </div>
                             </div>
                             <!-- <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim modi, id dicta reiciendis itaque.</p> -->

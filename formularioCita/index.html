@@ -19,6 +19,7 @@
 	<link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet"> -->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 	<!--//fonts-->
+	
 </head>
 
 <body>
@@ -39,8 +40,9 @@
 	<div class="bg-agile">
 		<div class="book-appointment">
 			<h2>Agenda tu Cita</h2>
+			<p style="text-align: center; margin-bottom: 5%;">Ingresa los datos del profesor</p>
 			
-			<form action="#" method="post" name="formulario" id="formulario">
+			<form action="./confirmacion.html" method="POST" name="formulario" id="formulario">
 				<div id="resultados_ajax" class="gaps"></div>
 				<div class="left-agileits-w3layouts same">
 					<div class="gaps">
@@ -53,10 +55,10 @@
 						<input type="text" name="apellidos" placeholder="" required maxlength="25" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
 					</div>
 
-					<div class="gaps">
+					<!-- <div class="gaps">
 						<p>Código Estudiante</p>
-						<input type="email" name="correo" placeholder="" required maxlength="6" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
-					</div>
+						<input type="number" name="correo" placeholder="" required maxlength="6" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+					</div> -->
 
 					<div class="gaps">
 						<p>Grado</p>
@@ -69,10 +71,10 @@
 						</select>
 					</div>
 
-					<div class="gaps">
+					<!-- <div class="gaps">
 						<p>Sección</p>
 						<input type="number" name="seccion" placeholder="" required maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
-					</div>
+					</div> -->
 					
 				</div>
 
@@ -92,36 +94,35 @@
 						<p>Hora</p>
 						<input type="text" id="timepicker" name="time" class="timepicker form-control" value="" autocomplete="off" required>
 					</div>
-
-					<div class="gaps">
-						<p>Asignatura</p>
-						<select class="form-control" name="asignatura" required>
-							<option></option>
-							<option value="Sociales">Sociales</option>
-							<option value="Artes">Artes</option>
-							<option value="Tecnologia">Tecnología</option>
-							<option value="Politica">Política</option>
-							<option value="Filosofia">Filosofía</option>
-							<option value="Quimica">Química</option>
-							<option value="Matematicas">Matemáticas</option>
-							<option value="Edu.Fisica">Edu.Física</option>
-							<option value="Ingles">Inglés</option>
-							<option value="Español">Español</option>
-							<option value="Fisica">Física</option>
-							<option value="Emprendimiento">Emprendimiento</option>
-							<option value="Religion">Religión</option>
-							<option value="Etica">Ética</option>
-						</select>
-					</div>
-					
-					<div class="gaps">
-						<p>Motivo</p>
-						<textarea name="motivo" placeholder="" required></textarea>
-					</div>
+				</div>
+				<div class="gaps" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+					<p>Asignatura</p>
+					<select class="form-control" name="asignatura" required style="width: max-content;">
+						<option></option>
+						<option value="Sociales">Sociales</option>
+						<option value="Artes">Artes</option>
+						<option value="Tecnologia">Tecnología</option>
+						<option value="Politica">Política</option>
+						<option value="Filosofia">Filosofía</option>
+						<option value="Quimica">Química</option>
+						<option value="Matematicas">Matemáticas</option>
+						<option value="Edu.Fisica">Edu.Física</option>
+						<option value="Ingles">Inglés</option>
+						<option value="Español">Español</option>
+						<option value="Fisica">Física</option>
+						<option value="Emprendimiento">Emprendimiento</option>
+						<option value="Religion">Religión</option>
+						<option value="Etica">Ética</option>
+					</select>
+				</div>
+				<div class="gaps">
+					<p>Motivo</p>
+					<textarea name="motivo" placeholder="" required style="width: 94%; min-height: 15vh;"></textarea>
 				</div>
 
-				<div class="clear"></div>
-				<input type="submit" value="Realizar cita">
+	
+				<input type="submit"  value="Realizar cita">
+				
 			</form>
 		</div>
 	</div>

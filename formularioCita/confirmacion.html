@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Agenda Tu Cita</title>
+	<link rel="shortcut icon" href="../cosas/Logo/ADfavi1.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+	</script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- Custom Theme files -->
+	<link href="css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="assets2/css/leadmark.css">
+	<!--fonts-->
+	<!-- <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<!--//fonts-->
+</head>
+
+<body>
+	<div class="navbar custom-navbar navbar-expand-md" id="navsito">
+		<div class="container">
+			<a class="navbar-brand" href="../index.php">
+				<img src="../cosas/logo.png">
+			</a>
+		</div>
+		
+		<div>
+			<a href="../index.php" class="ml-4 nav-link btn btn-primary btn-sm rounded">Volver</a>
+		</div>
+	</div>
+	
+	<!--background-->
+	<!-- <h1>Agendar cita </h1> -->
+	<div class="bg-agile">
+		<div class="tukiselect">
+			<h2>T&uacute; solicitud se ha enviado con &eacute;xito</h2>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/wickedpicker.js"></script>
+	<script type="text/javascript">
+		$('.timepicker').wickedpicker({ twentyFour: false });
+	</script>
+
+	<!-- Calendar -->
+
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+
+	<!-- //Calendar -->
+	
+	<script>
+		$("#appointment").submit(function (event) {
+			var parametros = $(this).serialize();
+			$.ajax({
+				type: "POST",
+				url: "enviar-mail.php",
+				data: parametros,
+				beforeSend: function (objeto) {
+					$("#resultados_ajax").html("Enviando...");
+				},
+				success: function (datos) {
+					$("#resultados_ajax").html(datos);
+				}
+			});
+			event.preventDefault();
+		});
+	</script>
+
+</body>
+</html>

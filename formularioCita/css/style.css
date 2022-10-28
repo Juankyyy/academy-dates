@@ -299,7 +299,23 @@ h1 {
 	font-family: 'Poppins', sans-serif;
 }
 
+.tukiselect h2 {
+	text-align: center;
+	font-size: 28px;
+	color: #000;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-top: 1.5rem;
+	letter-spacing: 4px;
+	font-family: 'Poppins', sans-serif;
+}
+
 .book-appointment {
+	background: rgba(0, 0, 0, 0.68);
+	padding: 25px 30px;
+}
+
+.book-appointments {
 	background: rgba(0, 0, 0, 0.68);
 	padding: 25px 30px;
 }
@@ -329,6 +345,10 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
+}
+
+input[type=number]{
+	-moz-appearance: textfield;
 }
 
 textarea {
@@ -434,6 +454,10 @@ input[type=submit]:hover {
 
 .gaps {
 	padding-left: 3em;
+}
+
+.all-gap {
+	width: 90%;
 }
 
 p.wickedpicker__title {
@@ -940,5 +964,4 @@ p.wickedpicker__title {
 		margin: 1.1em 1.5em 0;
 	}
 }
-
 /*--responsive--*/
